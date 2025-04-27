@@ -1,4 +1,3 @@
-
 import { Badge } from "@/components/ui/badge";
 import { Github, Youtube } from "lucide-react";
 
@@ -66,55 +65,52 @@ const Projects = () => {
       <div className="space-y-12">
         {projects.map((project) => (
           <div key={project.id} className="glass-card transition-all duration-300">
-            <div className="flex flex-col md:flex-row gap-8 p-6 md:p-8">
-              <div className="md:w-1/3">
-                <img 
-                  src={project.image} 
-                  alt={project.title} 
-                  className="rounded-lg w-full h-48 object-cover"
-                />
+            <div className="flex flex-col p-6 md:p-8">
+              <div className="flex flex-wrap gap-2 mb-4">
+                <Badge variant="outline" className="rounded-md bg-primary/10 text-primary border-primary/20">
+                  {project.type}
+                </Badge>
+                <Badge variant="outline" className="rounded-md bg-secondary/30">
+                  {project.association}
+                </Badge>
               </div>
               
-              <div className="md:w-2/3 space-y-4">
-                <div className="flex flex-wrap gap-2 mb-2">
-                  <Badge variant="outline" className="rounded-md bg-primary/10 text-primary border-primary/20">
-                    {project.type}
-                  </Badge>
-                  <Badge variant="outline" className="rounded-md bg-secondary/30">
-                    {project.association}
-                  </Badge>
-                </div>
-                
-                <h2 className="text-2xl font-bold">{project.title}</h2>
-                <p className="text-muted-foreground">{project.description}</p>
+              <h2 className="text-2xl font-bold mb-6">{project.title}</h2>
+              
+              <img 
+                src={project.image} 
+                alt={project.title} 
+                className="rounded-lg w-full max-w-2xl h-48 object-cover mx-auto mb-6"
+              />
+              
+              <p className="text-muted-foreground mb-6">{project.description}</p>
 
-                {project.links && (
-                  <div className="flex gap-3 mt-4">
-                    {project.links.github && (
-                      <a
-                        href={project.links.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-background/50 hover:bg-background/70 transition-colors"
-                      >
-                        <Github className="w-4 h-4" />
-                        GitHub
-                      </a>
-                    )}
-                    {project.links.youtube && (
-                      <a
-                        href={project.links.youtube}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-background/50 hover:bg-background/70 transition-colors"
-                      >
-                        <Youtube className="w-4 h-4" />
-                        Video
-                      </a>
-                    )}
-                  </div>
-                )}
-              </div>
+              {project.links && (
+                <div className="flex gap-3">
+                  {project.links.github && (
+                    <a
+                      href={project.links.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-background/50 hover:bg-background/70 transition-colors"
+                    >
+                      <Github className="w-4 h-4" />
+                      GitHub
+                    </a>
+                  )}
+                  {project.links.youtube && (
+                    <a
+                      href={project.links.youtube}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-background/50 hover:bg-background/70 transition-colors"
+                    >
+                      <Youtube className="w-4 h-4" />
+                      Video
+                    </a>
+                  )}
+                </div>
+              )}
             </div>
           </div>
         ))}

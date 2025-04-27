@@ -87,26 +87,28 @@ const Navbar = () => {
           </Button>
         </div>
       ) : (
-        <div className="flex items-center space-x-8">
-          {navItems.map((item) => (
-            <Link
-              key={item.name}
-              to={item.path}
-              className={`hover:text-primary transition-colors duration-200 ${
-                location.pathname === item.path ? 'border-b-2 border-primary' : ''
-              }`}
+        <div className="flex items-center">
+          <div className="flex items-center gap-x-3 md:gap-x-4 lg:gap-x-8">
+            {navItems.map((item) => (
+              <Link
+                key={item.name}
+                to={item.path}
+                className={`hover:text-primary transition-colors duration-200 whitespace-nowrap ${
+                  location.pathname === item.path ? 'border-b-2 border-primary' : ''
+                }`}
+              >
+                {item.name}
+              </Link>
+            ))}
+            
+            <button
+              onClick={toggleTheme}
+              className="p-2 rounded-full hover:bg-muted transition-colors ml-2"
+              aria-label="Toggle theme"
             >
-              {item.name}
-            </Link>
-          ))}
-          
-          <button
-            onClick={toggleTheme}
-            className="p-2 rounded-full hover:bg-muted transition-colors"
-            aria-label="Toggle theme"
-          >
-            {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
-          </button>
+              {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+            </button>
+          </div>
         </div>
       )}
 
