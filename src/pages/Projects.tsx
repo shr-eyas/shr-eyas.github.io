@@ -1,0 +1,126 @@
+
+import { Badge } from "@/components/ui/badge";
+import { Github, Youtube } from "lucide-react";
+
+interface Project {
+  id: number;
+  title: string;
+  description: string;
+  image: string;
+  type: "Research" | "Project" | "Self Project" | "Company" | "Academic";
+  association: string;
+  links?: {
+    github?: string;
+    youtube?: string;
+  };
+}
+
+const Projects = () => {
+  const projects: Project[] = [
+    {
+      id: 1,
+      title: "SnapNET: A generalizable robot-agnostic model for snap-fit assembly detection",
+      description: "This research focuses on developing a neural network architecture that can accurately detect snap-fit joints across various robotic platforms, enhancing manufacturing automation capabilities.",
+      image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e",
+      type: "Research",
+      association: "IITGN Robotics",
+      links: {
+        github: "https://github.com/example/snapnet",
+        youtube: "https://youtube.com/watch?v=example"
+      }
+    },
+    {
+      id: 2,
+      title: "Biomimetic Learning Algorithms for Environmental Data",
+      description: "A project that implements nature-inspired algorithms to analyze complex environmental datasets, resulting in more accurate climate predictions than traditional models.",
+      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
+      type: "Project",
+      association: "Climate Research Lab"
+    },
+    {
+      id: 3,
+      title: "Mathematical Models of Dolphin Communication",
+      description: "A self-initiated study exploring patterns in dolphin vocalizations using advanced signal processing techniques and information theory.",
+      image: "/lovable-uploads/3e5317d4-2ec0-4a19-acc6-8e26d4eed6e7.png",
+      type: "Self Project",
+      association: "Independent"
+    },
+    {
+      id: 4,
+      title: "AI-Enhanced Visual Recognition for Wildlife Conservation",
+      description: "A machine learning system that automatically identifies endangered species in camera trap footage, significantly reducing manual processing time.",
+      image: "https://images.unsplash.com/photo-1582562124811-c09040d0a901",
+      type: "Company",
+      association: "EcoTech Solutions"
+    }
+  ];
+
+  return (
+    <div className="py-16 px-6 md:px-12 lg:px-24">
+      <p className="text-lg mb-12 max-w-8xl">
+        My work spans across research, academic projects, and independent explorations. 
+        Each project represents my commitment to understanding the intersection of technology, 
+        mathematics, and nature.
+      </p>
+      
+      <div className="space-y-12">
+        {projects.map((project) => (
+          <div key={project.id} className="glass-card transition-all duration-300">
+            <div className="flex flex-col md:flex-row gap-8 p-6 md:p-8">
+              <div className="md:w-1/3">
+                <img 
+                  src={project.image} 
+                  alt={project.title} 
+                  className="rounded-lg w-full h-48 object-cover"
+                />
+              </div>
+              
+              <div className="md:w-2/3 space-y-4">
+                <div className="flex flex-wrap gap-2 mb-2">
+                  <Badge variant="outline" className="rounded-md bg-primary/10 text-primary border-primary/20">
+                    {project.type}
+                  </Badge>
+                  <Badge variant="outline" className="rounded-md bg-secondary/30">
+                    {project.association}
+                  </Badge>
+                </div>
+                
+                <h2 className="text-2xl font-bold">{project.title}</h2>
+                <p className="text-muted-foreground">{project.description}</p>
+
+                {project.links && (
+                  <div className="flex gap-3 mt-4">
+                    {project.links.github && (
+                      <a
+                        href={project.links.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-background/50 hover:bg-background/70 transition-colors"
+                      >
+                        <Github className="w-4 h-4" />
+                        GitHub
+                      </a>
+                    )}
+                    {project.links.youtube && (
+                      <a
+                        href={project.links.youtube}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-background/50 hover:bg-background/70 transition-colors"
+                      >
+                        <Youtube className="w-4 h-4" />
+                        Video
+                      </a>
+                    )}
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default Projects;
