@@ -11,7 +11,7 @@ const Index = () => {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight md:leading-snug lg:leading-tight max-w-3xl">
               Exploring the intersection of nature and mathematical logic
             </h1>
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-2">
               <Link 
                 to="/about" 
                 className="group inline-flex items-center text-lg text-foreground/90 hover:text-foreground transition-colors"
