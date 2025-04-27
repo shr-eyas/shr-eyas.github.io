@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -50,8 +51,6 @@ const Photography = () => {
 
   return (
     <div className="py-16 px-6 md:px-12 lg:px-24">
-      {/* <h1 className="text-5xl font-bold mb-8">Photography</h1> */}
-      
       <p className="text-lg mb-12 max-w-8xl">
         Photography allows me to capture the beauty and complexity of nature. My camera becomes my 
         tool for observation and documentation, helping me connect more deeply with natural environments.
@@ -64,6 +63,7 @@ const Photography = () => {
               key={photo.id}
               className={`absolute top-0 left-0 w-full h-full transition-opacity duration-500 ease-in-out
                 ${index === currentIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
+              style={{ transform: 'none' }}
             >
               <img
                 src={photo.url}
@@ -101,7 +101,7 @@ const Photography = () => {
               onClick={() => goToSlide(index)}
               className={`h-2.5 w-2.5 rounded-full transition-all duration-300 ${
                 currentIndex === index 
-                  ? 'glass-card scale-125' 
+                  ? 'bg-foreground/40 scale-125' 
                   : 'bg-foreground/20 hover:scale-110'
               }`}
               aria-label={`Go to slide ${index + 1}`}

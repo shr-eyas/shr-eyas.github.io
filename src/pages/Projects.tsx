@@ -1,3 +1,4 @@
+
 import { Badge } from "@/components/ui/badge";
 import { Github, Youtube } from "lucide-react";
 
@@ -77,37 +78,49 @@ const Projects = () => {
               
               <h2 className="text-2xl font-bold mb-6">{project.title}</h2>
               
-              <img 
-                src={project.image} 
-                alt={project.title} 
-                className="rounded-lg w-full max-w-2xl h-48 object-cover mx-auto mb-6"
-              />
+              {project.image && (
+                <img 
+                  src={project.image} 
+                  alt={project.title} 
+                  className="rounded-lg max-w-2xl h-48 object-contain mx-auto mb-6"
+                />
+              )}
               
               <p className="text-muted-foreground mb-6">{project.description}</p>
 
               {project.links && (
                 <div className="flex gap-3">
                   {project.links.github && (
-                    <a
-                      href={project.links.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-background/50 hover:bg-background/70 transition-colors"
+                    <Badge 
+                      variant="outline" 
+                      className="rounded-md bg-[#24292e]/10 hover:bg-[#24292e]/20 text-[#24292e] dark:bg-[#efefef]/10 dark:hover:bg-[#efefef]/20 dark:text-[#efefef]"
                     >
-                      <Github className="w-4 h-4" />
-                      GitHub
-                    </a>
+                      <a
+                        href={project.links.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-2 py-1"
+                      >
+                        <Github className="w-4 h-4" />
+                        GitHub
+                      </a>
+                    </Badge>
                   )}
                   {project.links.youtube && (
-                    <a
-                      href={project.links.youtube}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-background/50 hover:bg-background/70 transition-colors"
+                    <Badge 
+                      variant="outline" 
+                      className="rounded-md bg-red-500/10 hover:bg-red-500/20 text-red-600 dark:text-red-400"
                     >
-                      <Youtube className="w-4 h-4" />
-                      Video
-                    </a>
+                      <a
+                        href={project.links.youtube}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-2 py-1"
+                      >
+                        <Youtube className="w-4 h-4" />
+                        Video
+                      </a>
+                    </Badge>
                   )}
                 </div>
               )}
