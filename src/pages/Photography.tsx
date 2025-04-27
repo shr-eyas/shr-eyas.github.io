@@ -76,7 +76,7 @@ const Photography = () => {
         <Button 
           variant="outline" 
           size="icon" 
-          className="absolute top-1/2 left-4 transform -translate-y-1/2 glass-card hover:bg-white/30 z-20 transition-colors"
+          className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-background/50 backdrop-blur-sm border border-border hover:bg-background/70 z-20 transition-colors focus:translate-y-[-50%] active:translate-y-[-50%]"
           onClick={goToPrev}
           aria-label="Previous photo"
         >
@@ -86,7 +86,7 @@ const Photography = () => {
         <Button 
           variant="outline" 
           size="icon" 
-          className="absolute top-1/2 right-4 transform -translate-y-1/2 glass-card hover:bg-white/30 z-20 transition-colors"
+          className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-background/50 backdrop-blur-sm border border-border hover:bg-background/70 z-20 transition-colors focus:translate-y-[-50%] active:translate-y-[-50%]"
           onClick={goToNext}
           aria-label="Next photo"
         >
