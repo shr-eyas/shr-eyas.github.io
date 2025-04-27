@@ -68,10 +68,10 @@ const Projects = () => {
           <div key={project.id} className="glass-card transition-all duration-300">
             <div className="flex flex-col p-6 md:p-8">
               <div className="flex flex-wrap gap-2 mb-4">
-                <Badge variant="outline" className="rounded-md bg-primary/10 text-primary border-primary/20">
+                <Badge variant="outline" className="rounded-md bg-primary/10 text-primary border-primary/20 dark:bg-[#24292e]/10 dark:hover:bg-[#24292e]/20 dark:text-[#efefef] dark:border-[#efefef]/20">
                   {project.type}
                 </Badge>
-                <Badge variant="outline" className="rounded-md bg-secondary/30">
+                <Badge variant="outline" className="rounded-md bg-secondary/30 dark:bg-[#24292e]/10 dark:hover:bg-[#24292e]/20 dark:text-[#efefef] dark:border-[#efefef]/20">
                   {project.association}
                 </Badge>
               </div>
@@ -93,7 +93,7 @@ const Projects = () => {
                   {project.links.github && (
                     <Badge 
                       variant="outline" 
-                      className="rounded-md bg-[#24292e]/10 hover:bg-[#24292e]/20 text-[#24292e] dark:bg-[#efefef]/10 dark:hover:bg-[#efefef]/20 dark:text-[#efefef]"
+                      className="rounded-md bg-[#24292e]/10 hover:bg-[#24292e]/20 text-[#24292e] dark:bg-[#efefef]/10 dark:hover:bg-[#efefef]/20 dark:text-[#efefef] dark:border-[#efefef]/20"
                     >
                       <a
                         href={project.links.github}
@@ -109,7 +109,7 @@ const Projects = () => {
                   {project.links.youtube && (
                     <Badge 
                       variant="outline" 
-                      className="rounded-md bg-red-500/10 hover:bg-red-500/20 text-red-600 dark:text-red-400"
+                      className="rounded-md bg-red-500/10 hover:bg-red-500/20 text-red-600 dark:bg-[#efefef]/10 dark:hover:bg-[#efefef]/20 dark:text-[#efefef] dark:border-[#efefef]/20"
                     >
                       <a
                         href={project.links.youtube}

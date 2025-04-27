@@ -63,7 +63,6 @@ const Photography = () => {
               key={photo.id}
               className={`absolute top-0 left-0 w-full h-full transition-opacity duration-500 ease-in-out
                 ${index === currentIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
-              style={{ transform: 'none' }}
             >
               <img
                 src={photo.url}
@@ -77,7 +76,7 @@ const Photography = () => {
         <Button 
           variant="outline" 
           size="icon" 
-          className="absolute top-1/2 left-4 transform -translate-y-1/2 glass-card hover:bg-white/30 z-20"
+          className="absolute top-1/2 left-4 transform -translate-y-1/2 glass-card hover:bg-white/30 z-20 transition-colors"
           onClick={goToPrev}
           aria-label="Previous photo"
         >
@@ -87,7 +86,7 @@ const Photography = () => {
         <Button 
           variant="outline" 
           size="icon" 
-          className="absolute top-1/2 right-4 transform -translate-y-1/2 glass-card hover:bg-white/30 z-20"
+          className="absolute top-1/2 right-4 transform -translate-y-1/2 glass-card hover:bg-white/30 z-20 transition-colors"
           onClick={goToNext}
           aria-label="Next photo"
         >
@@ -101,7 +100,7 @@ const Photography = () => {
               onClick={() => goToSlide(index)}
               className={`h-2.5 w-2.5 rounded-full transition-all duration-300 ${
                 currentIndex === index 
-                  ? 'bg-foreground/40 scale-125' 
+                  ? 'bg-foreground/60 scale-125' 
                   : 'bg-foreground/20 hover:scale-110'
               }`}
               aria-label={`Go to slide ${index + 1}`}
