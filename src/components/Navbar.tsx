@@ -47,7 +47,7 @@ const Navbar = () => {
         )}
         {isHomePage && (
           <Link to="/" className="text-lg md:text-2xl font-bold">
-            shreyas kumar
+            Shreyas Kumar
           </Link>
         )}
       </div>
