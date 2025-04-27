@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 
@@ -7,8 +6,8 @@ const Index = () => {
     <div className="h-screen lg:overflow-hidden overflow-auto bg-background text-foreground px-6 md:px-12 lg:px-24 flex items-center">
       <div className="max-w-7xl mx-auto w-full relative">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-16">
-          <div className="lg:w-2/3 space-y-8 lg:-mt-40 z-10">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight md:leading-snug lg:leading-tight max-w-3xl">
+          <div className="lg:w-3/5 space-y-10 lg:-mt-32 z-10">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight md:leading-snug lg:leading-tight">
               Exploring the intersection of nature and mathematical logic
             </h1>
             <div className="flex flex-col gap-2">
@@ -27,12 +26,12 @@ const Index = () => {
             </div>
           </div>
 
-          <div className="lg:w-[45%] relative">
+          <div className="lg:absolute lg:left-[60%] lg:-top-56 lg:w-[600px] w-[400px]">
             <div className="glow-effect">
               <img 
                 src="/lovable-uploads/ad57e6ca-c739-4289-a117-3a3c8772c7c5.png"
                 alt="Geometric dolphin illustration"
-                className="w-full max-w-[400px] lg:max-w-[500px] h-auto fade-in relative"
+                className="w-full h-auto fade-in relative"
               />
             </div>
           </div>

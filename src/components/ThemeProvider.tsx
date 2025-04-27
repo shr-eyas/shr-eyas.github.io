@@ -1,4 +1,3 @@
-
 import { createContext, useContext, useEffect, useState } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
 
@@ -24,7 +23,7 @@ const ThemeProviderContext = createContext<ThemeProviderState>(initialState);
 
 export function ThemeProvider({
   children,
-  defaultTheme = "system",
+  defaultTheme = "light", // Changed from "system" to "light"
   storageKey = "vite-ui-theme",
   ...props
 }: ThemeProviderProps) {
@@ -35,19 +34,8 @@ export function ThemeProvider({
 
   useEffect(() => {
     const root = window.document.documentElement;
-    
-    // Default to dark mode on desktop, light mode on mobile
-    if (theme === "system") {
-      const systemTheme = isMobile 
-        ? "light" 
-        : "dark";
-      
-      root.classList.toggle("dark", systemTheme === "dark");
-      return;
-    }
-
     root.classList.toggle("dark", theme === "dark");
-  }, [theme, isMobile]);
+  }, [theme]);
 
   const value = {
     theme,
