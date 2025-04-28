@@ -1,3 +1,6 @@
+
+import { AspectRatio } from "@/components/ui/aspect-ratio";
+
 const About = () => {
   return (
     <div className="py-16 px-6 md:px-12 lg:px-24">
@@ -35,11 +38,13 @@ const About = () => {
         </div>
         
         <div className="lg:w-1/3">
-          <img 
-            src="https://images.unsplash.com/photo-1518770660439-4636190af475" 
-            alt="Shreyas Kumar" 
-            className="rounded-lg shadow-lg max-w-full h-auto object-cover"
-          />
+          <AspectRatio ratio={1/1} className="overflow-hidden rounded-lg shadow-lg">
+            <img 
+              src="https://images.unsplash.com/photo-1518770660439-4636190af475" 
+              alt="Shreyas Kumar" 
+              className="w-full h-full object-cover"
+            />
+          </AspectRatio>
         </div>
       </div>
     </div>

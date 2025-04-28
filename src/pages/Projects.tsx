@@ -1,3 +1,4 @@
+
 import { Badge } from "@/components/ui/badge";
 import { Github, Youtube, ExternalLink } from "lucide-react";
 import { InlineMath, BlockMath } from 'react-katex';
@@ -30,13 +31,19 @@ const Projects = () => {
           <div className="max-w-full overflow-x-auto py-4">
             <BlockMath math="\frac{\partial}{\partial t} \begin{pmatrix} \psi_1 \\ \psi_2 \end{pmatrix} = \begin{pmatrix} -\frac{\hbar^2}{2m}\nabla^2 + V_1(x) & -\mu E_0\cos(\omega t) \\ -\mu E_0\cos(\omega t) & -\frac{\hbar^2}{2m}\nabla^2 + V_2(x) \end{pmatrix} \begin{pmatrix} \psi_1 \\ \psi_2 \end{pmatrix}" />
           </div>
+          <img 
+            src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e"
+            alt="Neural network architecture"
+            className="max-h-64 object-contain mx-auto my-4"
+          />
         </div>
       ),
       type: "Research",
       association: "IITGN Robotics",
       links: {
         github: "https://github.com/example/test",
-        youtube: "https://youtube.com/watch?v=test"
+        youtube: "https://youtube.com/watch?v=test",
+        projectPage: "https://example.com/project"
       }
     },
     {

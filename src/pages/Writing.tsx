@@ -65,7 +65,7 @@ const Writing = () => {
                 href={article.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-base hover:underline"
+                className="font-bold hover:underline"
               >
                 {article.title}
               </a>
