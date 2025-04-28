@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Plus, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -64,7 +65,7 @@ const Writing = () => {
                 href={article.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-base font-bold hover:underline"
+                className="text-base hover:underline"
               >
                 {article.title}
               </a>
@@ -73,16 +74,17 @@ const Writing = () => {
                 variant="ghost" 
                 size="icon"
                 onClick={() => toggleExpand(article.id)}
+                className="transition-transform duration-300 ease-in-out"
                 aria-label={article.expanded ? "Collapse article" : "Expand article"}
               >
                 <Plus 
-                  className={`h-5 w-5 transition-transform ${article.expanded ? 'rotate-45' : ''}`} 
+                  className={`h-5 w-5 transition-transform duration-300 ease-in-out ${article.expanded ? 'rotate-45' : ''}`}
                 />
               </Button>
             </div>
             
             {article.expanded && (
-              <div className="mt-4 text-muted-foreground animate-accordion-down">
+              <div className="mt-4 text-muted-foreground transition-all duration-300 ease-in-out">
                 <p>{article.abstract}</p>
                 <a 
                   href={article.url}

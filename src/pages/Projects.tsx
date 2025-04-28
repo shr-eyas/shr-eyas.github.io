@@ -1,5 +1,6 @@
+
 import { Badge } from "@/components/ui/badge";
-import { Github, Youtube } from "lucide-react";
+import { Github, Youtube, ExternalLink } from "lucide-react";
 import { InlineMath, BlockMath } from 'react-katex';
 import 'katex/dist/katex.min.css';
 
@@ -13,6 +14,7 @@ interface Project {
   links?: {
     github?: string;
     youtube?: string;
+    projectPage?: string;
   };
 }
 
@@ -22,11 +24,13 @@ const Projects = () => {
       id: 1,
       title: "SnapNET: A generalizable robot-agnostic model for snap-fit assembly detection",
       content: (
-        <div className="space-y-4">
+        <div className="space-y-4 overflow-x-auto">
           <p>
             Using deep learning for robotic assembly, we developed a model that can detect snap-fit joints with an accuracy of <InlineMath math="\alpha = 95\%" />.
           </p>
-          <BlockMath math="\frac{\partial L}{\partial w} = \sum_{i=1}^n (y_i - \hat{y_i})x_i" />
+          <div className="max-w-full overflow-x-auto py-4">
+            <BlockMath math="\frac{\partial L}{\partial w} = \sum_{i=1}^n (y_i - \hat{y_i})x_i" />
+          </div>
           <img 
             src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e"
             alt="Neural network architecture"
@@ -38,7 +42,8 @@ const Projects = () => {
       association: "IITGN Robotics",
       links: {
         github: "https://github.com/example/snapnet",
-        youtube: "https://youtube.com/watch?v=example"
+        youtube: "https://youtube.com/watch?v=example",
+        projectPage: "https://example.com/project"
       }
     },
     {
@@ -108,16 +113,16 @@ const Projects = () => {
               
               <h2 className="text-2xl font-bold mb-6">{project.title}</h2>
               
-              <div className="mb-6">
+              <div className="mb-6 overflow-x-auto">
                 {project.content}
               </div>
 
               {project.links && (
-                <div className="flex gap-3">
+                <div className="flex flex-wrap gap-3">
                   {project.links.github && (
                     <Badge 
                       variant="outline" 
-                      className="rounded-md bg-[#24292e]/10 hover:bg-[#24292e]/20 text-[#24292e] dark:bg-[#efefef]/10 dark:hover:bg-[#efefef]/20 dark:text-[#efefef] dark:border-[#efefef]/20"
+                      className="rounded-md bg-[#24292e]/10 hover:bg-[#24292e]/20 text-[#24292e] hover:shadow-lg transition-all duration-300 light:shadow-gray-400/50 dark:bg-[#efefef]/10 dark:hover:bg-[#efefef]/20 dark:text-[#efefef] dark:border-[#efefef]/20"
                     >
                       <a
                         href={project.links.github}
@@ -133,7 +138,7 @@ const Projects = () => {
                   {project.links.youtube && (
                     <Badge 
                       variant="outline" 
-                      className="rounded-md bg-[#24292e]/10 hover:bg-[#24292e]/20 text-[#24292e] dark:bg-[#efefef]/10 dark:hover:bg-[#efefef]/20 dark:text-[#efefef] dark:border-[#efefef]/20"
+                      className="rounded-md bg-red-500/10 hover:bg-red-500/20 text-red-700 hover:shadow-lg transition-all duration-300 light:shadow-red-400/50 dark:bg-[#efefef]/10 dark:hover:bg-[#efefef]/20 dark:text-[#efefef] dark:border-[#efefef]/20"
                     >
                       <a
                         href={project.links.youtube}
@@ -143,6 +148,22 @@ const Projects = () => {
                       >
                         <Youtube className="w-4 h-4" />
                         Video
+                      </a>
+                    </Badge>
+                  )}
+                  {project.links.projectPage && (
+                    <Badge 
+                      variant="outline" 
+                      className="rounded-md bg-blue-500/10 hover:bg-blue-500/20 text-blue-700 hover:shadow-lg transition-all duration-300 light:shadow-blue-400/50 dark:bg-[#efefef]/10 dark:hover:bg-[#efefef]/20 dark:text-[#efefef] dark:border-[#efefef]/20"
+                    >
+                      <a
+                        href={project.links.projectPage}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-2 py-1"
+                      >
+                        <ExternalLink className="w-4 h-4" />
+                        Project Page
                       </a>
                     </Badge>
                   )}
