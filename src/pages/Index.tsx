@@ -34,7 +34,7 @@ const Index = () => {
               <img 
                 src="/lovable-uploads/ad57e6ca-c739-4289-a117-3a3c8772c7c5.png"
                 alt="Geometric dolphin illustration"
-                className="w-full h-auto fade-in relative"
+                className="w-full h-auto relative"
               />
             </div>
           </div>

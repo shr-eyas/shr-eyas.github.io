@@ -1,7 +1,9 @@
-import { Badge } from "@/components/ui/badge";
-import { Github, Youtube, ExternalLink } from "lucide-react";
+
 import { InlineMath, BlockMath } from 'react-katex';
 import 'katex/dist/katex.min.css';
+import { ProjectCard } from "@/components/project/ProjectCard";
+import { ProjectImage } from "@/components/project/ProjectImage";
+import { getRandomCaption } from "@/components/project/ProjectUtils";
 
 interface Project {
   id: number;
@@ -25,16 +27,19 @@ const Projects = () => {
       content: (
         <div className="space-y-4 overflow-x-auto">
           <p>A deep dive into mathematical patterns found in nature, featuring multiple equations and visualizations.</p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
-            <img 
+          
+          <div className="my-8"></div> {/* Added explicit spacing here */}
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+            <ProjectImage 
               src="https://images.unsplash.com/photo-1470813740244-df37b8c1edcb"
               alt="Starry night patterns"
-              className="rounded-lg max-h-48 w-full object-cover"
+              caption={getRandomCaption()}
             />
-            <img 
+            <ProjectImage 
               src="https://images.unsplash.com/photo-1500673922987-e212871fec22"
               alt="Natural patterns"
-              className="rounded-lg max-h-48 w-full object-cover"
+              caption={getRandomCaption()}
             />
           </div>
           <div className="max-w-full overflow-x-auto py-4">
@@ -61,11 +66,17 @@ const Projects = () => {
           <p>
             An open-source algorithm for tracking wildlife movement patterns using satellite data.
           </p>
-          <img 
-            src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158"
-            alt="Wildlife tracking visualization"
-            className="max-h-64 object-cover rounded-lg mx-auto"
-          />
+          
+          <div className="my-8"></div> {/* Added explicit spacing here */}
+          
+          <div className="flex flex-col items-center mb-4">
+            <img 
+              src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158"
+              alt="Wildlife tracking visualization"
+              className="rounded-lg object-contain w-auto h-auto max-h-64"
+            />
+            <span className="text-sm text-muted-foreground mt-2">{getRandomCaption()}</span>
+          </div>
         </div>
       ),
       type: "Project",
@@ -80,11 +91,17 @@ const Projects = () => {
       content: (
         <div className="space-y-4">
           <p>Interactive visualization of neural network architectures and their learning processes.</p>
-          <img 
-            src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b"
-            alt="Neural network visualization"
-            className="max-h-64 object-cover rounded-lg mx-auto"
-          />
+          
+          <div className="my-8"></div> {/* Added explicit spacing here */}
+          
+          <div className="flex flex-col items-center mb-4">
+            <img 
+              src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b"
+              alt="Neural network visualization"
+              className="rounded-lg object-contain w-auto h-auto max-h-64"
+            />
+            <span className="text-sm text-muted-foreground mt-2">{getRandomCaption()}</span>
+          </div>
         </div>
       ),
       type: "Self Project",
@@ -96,12 +113,23 @@ const Projects = () => {
     },
     {
       id: 4,
-      title: "AI-Enhanced Visual Recognition for Wildlife Conservation",
+      title: "AI-Enhanced Visual Recognition",
       content: (
         <div className="space-y-4">
           <p>
-            A machine learning system that automatically identifies endangered species in camera trap footage, significantly reducing manual processing time.
+            A machine learning system that automatically identifies endangered species in camera trap footage.
           </p>
+          
+          <div className="my-8"></div> {/* Added explicit spacing here */}
+          
+          <div className="flex flex-col items-center mb-4">
+            <img 
+              src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcDFtbzlvNWU4Ym5hdjg5aGtrMjA3aG1jamdjazBkOGRlZXdtbDk4bSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7bugDTSonKZ3ONry/giphy.gif"
+              alt="AI visualization gif"
+              className="rounded-lg object-contain w-auto h-auto max-h-64"
+            />
+            <span className="text-sm text-muted-foreground mt-2">{getRandomCaption()}</span>
+          </div>
         </div>
       ),
       image: "https://images.unsplash.com/photo-1582562124811-c09040d0a901",
@@ -120,77 +148,16 @@ const Projects = () => {
       
       <div className="space-y-12">
         {projects.map((project) => (
-          <div key={project.id} className="glass-card transition-all duration-300">
-            <div className="flex flex-col p-6 md:p-8">
-              <div className="flex flex-wrap gap-2 mb-4">
-                <Badge variant="outline" className="rounded-md bg-primary/10 text-primary border-primary/20 dark:bg-[#24292e]/10 dark:hover:bg-[#24292e]/20 dark:text-[#efefef] dark:border-[#efefef]/20">
-                  {project.type}
-                </Badge>
-                <Badge variant="outline" className="rounded-md bg-secondary/30 dark:bg-[#24292e]/10 dark:hover:bg-[#24292e]/20 dark:text-[#efefef] dark:border-[#efefef]/20">
-                  {project.association}
-                </Badge>
-              </div>
-              
-              <h2 className="text-2xl font-bold mb-6">{project.title}</h2>
-              
-              <div className="mb-6 overflow-x-auto">
-                {project.content}
-              </div>
-
-              {project.links && (
-                <div className="flex flex-wrap gap-3">
-                  {project.links.github && (
-                    <Badge 
-                      variant="outline" 
-                      className="rounded-md bg-[#24292e]/10 hover:bg-[#24292e]/20 text-[#24292e] hover:shadow-lg transition-all duration-300 light:shadow-gray-400/50 dark:bg-[#efefef]/10 dark:hover:bg-[#efefef]/20 dark:text-[#efefef] dark:border-[#efefef]/20"
-                    >
-                      <a
-                        href={project.links.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-2 py-1"
-                      >
-                        <Github className="w-4 h-4" />
-                        GitHub
-                      </a>
-                    </Badge>
-                  )}
-                  {project.links.youtube && (
-                    <Badge 
-                      variant="outline" 
-                      className="rounded-md bg-red-500/10 hover:bg-red-500/20 text-red-700 hover:shadow-lg transition-all duration-300 light:shadow-red-400/50 dark:bg-[#efefef]/10 dark:hover:bg-[#efefef]/20 dark:text-[#efefef] dark:border-[#efefef]/20"
-                    >
-                      <a
-                        href={project.links.youtube}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-2 py-1"
-                      >
-                        <Youtube className="w-4 h-4" />
-                        Video
-                      </a>
-                    </Badge>
-                  )}
-                  {project.links.projectPage && (
-                    <Badge 
-                      variant="outline" 
-                      className="rounded-md bg-blue-500/10 hover:bg-blue-500/20 text-blue-700 hover:shadow-lg transition-all duration-300 light:shadow-blue-400/50 dark:bg-[#efefef]/10 dark:hover:bg-[#efefef]/20 dark:text-[#efefef] dark:border-[#efefef]/20"
-                    >
-                      <a
-                        href={project.links.projectPage}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-2 py-1"
-                      >
-                        <ExternalLink className="w-4 h-4" />
-                        Project Page
-                      </a>
-                    </Badge>
-                  )}
-                </div>
-              )}
-            </div>
-          </div>
+          <ProjectCard
+            key={project.id}
+            id={project.id}
+            title={project.title}
+            content={project.content}
+            image={project.image}
+            type={project.type}
+            association={project.association}
+            links={project.links}
+          />
         ))}
       </div>
     </div>

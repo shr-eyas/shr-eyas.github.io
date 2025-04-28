@@ -37,14 +37,16 @@ const About = () => {
           </p>
         </div>
         
-        <div className="lg:w-1/3">
-          <AspectRatio ratio={1/1} className="overflow-hidden rounded-lg shadow-lg">
-            <img 
-              src="https://images.unsplash.com/photo-1518770660439-4636190af475" 
-              alt="Shreyas Kumar" 
-              className="w-full h-full object-cover"
-            />
-          </AspectRatio>
+        <div className="lg:w-1/3 flex items-center">
+          <div className="w-full max-w-[300px] mx-auto">
+            <AspectRatio ratio={1/1} className="overflow-hidden rounded-lg shadow-lg">
+              <img 
+                src="https://images.unsplash.com/photo-1518770660439-4636190af475" 
+                alt="Shreyas Kumar" 
+                className="w-full h-full object-cover"
+              />
+            </AspectRatio>
+          </div>
         </div>
       </div>
     </div>
