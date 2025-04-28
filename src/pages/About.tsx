@@ -1,11 +1,8 @@
-
 const About = () => {
   return (
     <div className="py-16 px-6 md:px-12 lg:px-24">
-      {/* <h1 className="text-5xl font-bold mb-12">About</h1> */}
-      
       <div className="flex flex-col lg:flex-row gap-12">
-        <div className="lg:w-2/3 space-y-6 font-mono leading-relaxed">
+        <div className="lg:w-2/3 space-y-6 text-justify leading-relaxed">
           <p>I'm a student from Gujarat, India.</p>
           
           <p>

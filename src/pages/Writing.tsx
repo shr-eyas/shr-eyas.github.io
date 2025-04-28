@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Plus, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -44,8 +43,6 @@ const Writing = () => {
 
   return (
     <div className="py-16 px-6 md:px-12 lg:px-24">
-      {/* <h1 className="text-5xl font-bold mb-8">Writing</h1> */}
-      
       <p className="text-lg mb-12 max-w-8xl">
         I write about nature, mathematics, philosophy, robotics, or anything that crosses my mind. 
         Here are a few of my recent favorite articles. For all my writing, visit my{" "}
@@ -67,7 +64,7 @@ const Writing = () => {
                 href={article.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-xl font-medium hover:underline"
+                className="text-base font-bold hover:underline"
               >
                 {article.title}
               </a>
