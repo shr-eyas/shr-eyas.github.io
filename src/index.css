@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -64,6 +65,11 @@
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
   }
+  
+  .disable-transitions,
+  .disable-transitions * {
+    transition: none !important;
+  }
 }
 
 @layer base {
@@ -108,37 +114,58 @@
     );
   }
 
-  /* Remove hover state styles */
   .glass-card:hover {
     transform: translateY(-2px);
   }
 
+  /* Completely revamped glow effect to ensure it works across theme changes */
   .glow-effect {
-    @apply relative;
+    @apply w-full h-full;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    overflow: hidden;
   }
 
   .light .glow-effect::before {
     content: '';
-    @apply absolute inset-0 -z-0 blur-[60px] opacity-40;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background: radial-gradient(
       circle at center,
       rgba(0, 0, 0, 0.2) 0%,
       rgba(0, 0, 0, 0.1) 50%,
       transparent 70%
     );
-    transform: scale(1.2);
+    filter: blur(60px);
+    opacity: 0.4;
+    transform: scale(1.5);
+    z-index: -1;
   }
 
   .dark .glow-effect::before {
     content: '';
-    @apply absolute inset-0 -z-0 blur-[60px] opacity-30;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background: radial-gradient(
       circle at center,
       rgba(0, 195, 255, 0.3) 0%,
       rgba(0, 195, 255, 0.1) 50%,
       transparent 70%
     );
-    transform: scale(1.2);
+    filter: blur(60px);
+    opacity: 0.3;
+    transform: scale(1.5);
+    z-index: -1;
   }
 
   .fade-in {

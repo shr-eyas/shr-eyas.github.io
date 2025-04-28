@@ -1,3 +1,4 @@
+
 import { createContext, useContext, useEffect, useState } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
 
@@ -23,7 +24,7 @@ const ThemeProviderContext = createContext<ThemeProviderState>(initialState);
 
 export function ThemeProvider({
   children,
-  defaultTheme = "light", // Changed from "system" to "light"
+  defaultTheme = "light",
   storageKey = "vite-ui-theme",
   ...props
 }: ThemeProviderProps) {
@@ -34,7 +35,22 @@ export function ThemeProvider({
 
   useEffect(() => {
     const root = window.document.documentElement;
+    
+    // Apply disable-transitions class first to prevent visual glitches
+    root.classList.add('disable-transitions');
+    
+    // Apply theme class before any reflow happens
     root.classList.toggle("dark", theme === "dark");
+    
+    // Force reflow to ensure the change is applied immediately
+    document.body.offsetHeight;
+    
+    // Re-enable transitions after a brief delay to ensure everything is painted
+    const transitionTimer = setTimeout(() => {
+      root.classList.remove('disable-transitions');
+    }, 50);
+    
+    return () => clearTimeout(transitionTimer);
   }, [theme]);
 
   const value = {

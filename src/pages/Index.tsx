@@ -1,9 +1,15 @@
+
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 
 const Index = () => {
   return (
-    <div className="h-screen lg:overflow-hidden overflow-auto bg-background text-foreground px-6 md:px-12 lg:px-24 flex items-center">
+    <div className="h-screen lg:overflow-hidden overflow-auto bg-background text-foreground px-6 md:px-12 lg:px-24 flex items-center relative">
+      {/* Add a full-page background glow that sits below everything */}
+      <div className="fixed inset-0 pointer-events-none" aria-hidden="true">
+        <div className="absolute inset-0 glow-effect"></div>
+      </div>
+      
       <div className="max-w-7xl mx-auto w-full relative">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-16">
           <div className="lg:w-3/5 space-y-10 lg:-mt-32 z-10">
@@ -26,8 +32,8 @@ const Index = () => {
             </div>
           </div>
 
-          <div className="lg:absolute lg:left-[60%] lg:-top-56 lg:w-[600px] w-[400px]">
-            <div className="glow-effect">
+          <div className="lg:absolute lg:left-[60%] lg:-top-56 lg:w-[600px] w-[400px] z-0">
+            <div className="relative">
               <img 
                 src="/lovable-uploads/ad57e6ca-c739-4289-a117-3a3c8772c7c5.png"
                 alt="Geometric dolphin illustration"

@@ -6,32 +6,32 @@ const Contact = () => {
     {
       icon: <MapPin className="h-5 w-5" />,
       label: "Location",
-      value: "Vancouver, BC, Canada",
+      value: "Ahmedabad, Gujarat, India",
       link: null
     },
     {
       icon: <Mail className="h-5 w-5" />,
       label: "Email",
-      value: "contact@shreyaskumar.com",
-      link: "mailto:contact@shreyaskumar.com"
+      value: "shreyas.kumar@icloud.com",
+      link: "mailto:shreyas.kumar@icloud.com"
     },
     {
       icon: <Linkedin className="h-5 w-5" />,
       label: "LinkedIn",
-      value: "linkedin.com/in/shreyas-kumar",
-      link: "https://linkedin.com/in/"
+      value: "linkedin.com/in/shre-yas",
+      link: "https://linkedin.com/in/shr-eyas"
     },
     {
       icon: <Github className="h-5 w-5" />,
       label: "GitHub",
-      value: "github.com/shreyas",
-      link: "https://github.com/"
+      value: "github.com/shr-eyas",
+      link: "https://github.com/shr-eyas"
     },
     {
       icon: <BookOpen className="h-5 w-5" />,
       label: "Google Scholar",
-      value: "scholar.google.com/shreyas",
-      link: "https://scholar.google.com/"
+      value: "scholar.google.com",
+      link: "https://scholar.google.com/citations?user=anIVKo4AAAAJ&hl=en&authuser=2"
     }
   ];
 

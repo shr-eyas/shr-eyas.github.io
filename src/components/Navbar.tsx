@@ -33,7 +33,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="py-6 px-6 md:px-12 flex justify-between items-center relative">
+    <nav className="py-6 px-6 md:px-12 flex justify-between items-center relative z-20">
       <div className="flex items-center gap-4">
         {!isHomePage && (
           <div className="flex items-center">
@@ -56,10 +56,13 @@ const Navbar = () => {
         <div className="flex items-center gap-4">
           <button
             onClick={toggleTheme}
-            className="p-2 rounded-full hover:bg-muted transition-colors"
+            className="p-2 rounded-full hover:bg-muted transition-colors flex items-center justify-center"
             aria-label="Toggle theme"
           >
-            {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+            {theme === "dark" ? 
+              <Sun size={18} className="translate-y-[1px]" /> : 
+              <Moon size={18} className="translate-y-[1px]" />
+            }
           </button>
           <Button
             variant="ghost"
@@ -103,10 +106,13 @@ const Navbar = () => {
             
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-full hover:bg-muted transition-colors ml-2"
+              className="flex items-center justify-center p-2 rounded-full hover:bg-muted transition-colors ml-2"
               aria-label="Toggle theme"
             >
-              {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+              {theme === "dark" ? 
+                <Sun size={18} className="translate-y-[1px]" /> : 
+                <Moon size={18} className="translate-y-[1px]" />
+              }
             </button>
           </div>
         </div>

@@ -6,7 +6,7 @@ const About = () => {
       
       <div className="flex flex-col lg:flex-row gap-12">
         <div className="lg:w-2/3 space-y-6 font-mono leading-relaxed">
-          <p>I'm a student from Vancouver, BC.</p>
+          <p>I'm a student from Gujarat, India.</p>
           
           <p>
             Inspired by nature since seeing a wild Snowy Owl in 2012, 
