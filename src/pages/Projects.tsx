@@ -1,4 +1,3 @@
-
 import { Badge } from "@/components/ui/badge";
 import { Github, Youtube, ExternalLink } from "lucide-react";
 import { InlineMath, BlockMath } from 'react-katex';
@@ -22,57 +21,78 @@ const Projects = () => {
   const projects: Project[] = [
     {
       id: 1,
-      title: "Testing Long Equation Display",
+      title: "Complex Mathematics in Nature",
       content: (
         <div className="space-y-4 overflow-x-auto">
-          <p>
-            Here's a complex equation with an inline term <InlineMath math="\alpha = 95\%" /> and a block equation:
-          </p>
-          <div className="max-w-full overflow-x-auto py-4">
-            <BlockMath math="\frac{\partial}{\partial t} \begin{pmatrix} \psi_1 \\ \psi_2 \end{pmatrix} = \begin{pmatrix} -\frac{\hbar^2}{2m}\nabla^2 + V_1(x) & -\mu E_0\cos(\omega t) \\ -\mu E_0\cos(\omega t) & -\frac{\hbar^2}{2m}\nabla^2 + V_2(x) \end{pmatrix} \begin{pmatrix} \psi_1 \\ \psi_2 \end{pmatrix}" />
+          <p>A deep dive into mathematical patterns found in nature, featuring multiple equations and visualizations.</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
+            <img 
+              src="https://images.unsplash.com/photo-1470813740244-df37b8c1edcb"
+              alt="Starry night patterns"
+              className="rounded-lg max-h-48 w-full object-cover"
+            />
+            <img 
+              src="https://images.unsplash.com/photo-1500673922987-e212871fec22"
+              alt="Natural patterns"
+              className="rounded-lg max-h-48 w-full object-cover"
+            />
           </div>
-          <img 
-            src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e"
-            alt="Neural network architecture"
-            className="max-h-64 object-contain mx-auto my-4"
-          />
+          <div className="max-w-full overflow-x-auto py-4">
+            <BlockMath math="\oint_{\partial \Omega} \omega = \int_{\Omega} d\omega \quad \text{(Stokes' Theorem)}" />
+          </div>
+          <div className="max-w-full overflow-x-auto py-4">
+            <BlockMath math="\frac{\partial^2 u}{\partial t^2} = c^2 \nabla^2 u + \sum_{i=1}^n \alpha_i \frac{\partial u}{\partial x_i} + f(x,t)" />
+          </div>
         </div>
       ),
       type: "Research",
-      association: "IITGN Robotics",
+      association: "Mathematics Department",
       links: {
-        github: "https://github.com/example/test",
-        youtube: "https://youtube.com/watch?v=test",
-        projectPage: "https://example.com/project"
+        github: "https://github.com/example/math-nature",
+        youtube: "https://youtube.com/watch?v=nature-math",
+        projectPage: "https://math-nature.example.com"
       }
     },
     {
       id: 2,
-      title: "Biomimetic Learning Algorithms for Environmental Data",
+      title: "Wildlife Tracking Algorithm",
       content: (
         <div className="space-y-4">
           <p>
-            A project that implements nature-inspired algorithms to analyze complex environmental datasets, resulting in more accurate climate predictions than traditional models.
+            An open-source algorithm for tracking wildlife movement patterns using satellite data.
           </p>
+          <img 
+            src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158"
+            alt="Wildlife tracking visualization"
+            className="max-h-64 object-cover rounded-lg mx-auto"
+          />
         </div>
       ),
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
       type: "Project",
-      association: "Climate Research Lab"
+      association: "Conservation Tech Lab",
+      links: {
+        github: "https://github.com/example/wildlife-tracking"
+      }
     },
     {
       id: 3,
-      title: "Mathematical Models of Dolphin Communication",
+      title: "Neural Network Visualization",
       content: (
         <div className="space-y-4">
-          <p>
-            A self-initiated study exploring patterns in dolphin vocalizations using advanced signal processing techniques and information theory.
-          </p>
+          <p>Interactive visualization of neural network architectures and their learning processes.</p>
+          <img 
+            src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b"
+            alt="Neural network visualization"
+            className="max-h-64 object-cover rounded-lg mx-auto"
+          />
         </div>
       ),
-      image: "/lovable-uploads/3e5317d4-2ec0-4a19-acc6-8e26d4eed6e7.png",
       type: "Self Project",
-      association: "Independent"
+      association: "Independent",
+      links: {
+        github: "https://github.com/example/neural-vis",
+        youtube: "https://youtube.com/watch?v=neural-demo"
+      }
     },
     {
       id: 4,

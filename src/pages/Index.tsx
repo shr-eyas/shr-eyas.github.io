@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 
 const Index = () => {
   return (
-    <div className="h-screen lg:overflow-hidden overflow-auto bg-background text-foreground px-6 md:px-12 lg:px-24 flex items-center relative">
+    <div className="h-screen lg:overflow-hidden overflow-auto bg-background text-foreground px-6 md:px-12 lg:px-24 flex items-center relative animate-fade-in">
       <div className="max-w-7xl mx-auto w-full relative">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-16">
           <div className="lg:w-3/5 space-y-10 lg:-mt-32 z-10">
