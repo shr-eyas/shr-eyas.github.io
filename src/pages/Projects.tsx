@@ -1,4 +1,3 @@
-
 import { Badge } from "@/components/ui/badge";
 import { Github, Youtube, ExternalLink } from "lucide-react";
 import { InlineMath, BlockMath } from 'react-katex';
@@ -22,28 +21,22 @@ const Projects = () => {
   const projects: Project[] = [
     {
       id: 1,
-      title: "SnapNET: A generalizable robot-agnostic model for snap-fit assembly detection",
+      title: "Testing Long Equation Display",
       content: (
         <div className="space-y-4 overflow-x-auto">
           <p>
-            Using deep learning for robotic assembly, we developed a model that can detect snap-fit joints with an accuracy of <InlineMath math="\alpha = 95\%" />.
+            Here's a complex equation with an inline term <InlineMath math="\alpha = 95\%" /> and a block equation:
           </p>
           <div className="max-w-full overflow-x-auto py-4">
-            <BlockMath math="\frac{\partial L}{\partial w} = \sum_{i=1}^n (y_i - \hat{y_i})x_i" />
+            <BlockMath math="\frac{\partial}{\partial t} \begin{pmatrix} \psi_1 \\ \psi_2 \end{pmatrix} = \begin{pmatrix} -\frac{\hbar^2}{2m}\nabla^2 + V_1(x) & -\mu E_0\cos(\omega t) \\ -\mu E_0\cos(\omega t) & -\frac{\hbar^2}{2m}\nabla^2 + V_2(x) \end{pmatrix} \begin{pmatrix} \psi_1 \\ \psi_2 \end{pmatrix}" />
           </div>
-          <img 
-            src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e"
-            alt="Neural network architecture"
-            className="max-h-64 object-contain mx-auto my-4"
-          />
         </div>
       ),
       type: "Research",
       association: "IITGN Robotics",
       links: {
-        github: "https://github.com/example/snapnet",
-        youtube: "https://youtube.com/watch?v=example",
-        projectPage: "https://example.com/project"
+        github: "https://github.com/example/test",
+        youtube: "https://youtube.com/watch?v=test"
       }
     },
     {
