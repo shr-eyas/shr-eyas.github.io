@@ -15,7 +15,7 @@ const About = () => {
           
           <p>
             Much of my thinking is shaped by a deep curiosity of how systems adapt, interact, and evolve
-            - and I've always been drawn to understanding them using the language of physics and mathematics.
+            — and I've always been drawn to understanding them using the language of physics and mathematics.
             I tend to find beauty in structured systems, and yet am drawn to thier unpredictability and uncertainty.
           </p>
 
@@ -29,7 +29,7 @@ const About = () => {
             Research Interest
           </span>
             My vision is to build generalizable robotic systems capable of physically interacting with complex environments 
-            — in ways that are robust, safe, and adaptable. I am particularly fascinated by how we can combine conventional 
+            in ways that are robust, safe, and adaptable. I am particularly fascinated by how we can combine conventional 
             control theory with data-driven learning to achieve reliable, real-world manipulation. I aim to contribute towards 
             making contact-rich robot behavior both intelligent and reliable — not just in the lab, but in everyday human settings.
           </p>
