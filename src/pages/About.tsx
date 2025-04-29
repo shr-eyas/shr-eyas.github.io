@@ -6,35 +6,40 @@ const About = () => {
     <div className="py-16 px-6 md:px-12 lg:px-24">
       <div className="flex flex-col lg:flex-row gap-12">
         <div className="lg:w-2/3 space-y-6 text-justify leading-relaxed">
-          <p>I'm a student from Gujarat, India.</p>
-          
           <p>
-            Inspired by nature since seeing a wild Snowy Owl in 2012, 
-            I'm a naturalist and wildlife <span className="italic">saba</span> photographer.
-            Naturally, as someone passionate about nature, I engage in local 
-            climate activism and raise awareness through art and photography, 
-            as well as <a href="#" className="underline">a role-playing game</a> I am helping develop.
+            I'm a <span className="font-bold">predoctoral researcher</span> at <a href="https://research.iitgn.ac.in/robotics/" className="underline" target="_blank" rel="noopener noreferrer">IITGN Robotics Laboratory</a>, 
+            with a research focus at the intersection of robotics, control, and learning. I am advised by Prof. Harish P.M. and 
+            supported by <a href="https://addverb.com/" className="underline" target="_blank" rel="noopener noreferrer">Addverb Technologies</a>. 
+            I completed my undergraduate degree in Mechanical Engineering from Indian Institute of Engineering Science and Technology (IIEST).
           </p>
           
           <p>
-            I have recently been spending most of my time doing 
-            mathematics and computer science, which you can explore on this site.
+            Much of my thinking is shaped by a deep curiosity of how systems adapt, interact, and evolve
+            - and I've always been drawn to understanding them using the language of physics and mathematics.
+            I tend to find beauty in structured systems, and yet am drawn to thier unpredictability and uncertainty.
+          </p>
+
+          <p>
+          <span className="font-bold">Creative Outlet.</span> Outside of robotics, I'm deeply interested in nature, music, and philosophy. 
+          I enjoy playing guitar, writing about the human condition, and taking reflective photo-walks. 
+          </p>
+
+          <p>
+          <span className="block font-bold text-lg -mt-1 mb-2">
+            Research Interest
+          </span>
+            My vision is to build generalizable robotic systems capable of physically interacting with complex environments 
+            — in ways that are robust, safe, and adaptable. I am particularly fascinated by how we can combine conventional 
+            control theory with data-driven learning to achieve reliable, real-world manipulation. I aim to contribute towards 
+            making contact-rich robot behavior both intelligent and reliable — not just in the lab, but in everyday human settings.
           </p>
           
-          <p>
-            you can contact me at <a href="mailto:contact@shreyaskumar.com" className="underline">contact@shreyaskumar.com</a>
-          </p>
-          
-          <p>
-            to receive updates every two months on what I'm doing, sign up for <a href="#" className="underline">my newsletter.</a>
-          </p>
-          
-          <p>
+          {/* <p>
             follow me on <a href="https://medium.com/shr-eyas" className="underline" target="_blank" rel="noopener noreferrer">medium</a>, 
             <a href="#" className="underline"> instagram</a>, 
             and <a href="#" className="underline"> twitter.</a> View my code on 
             <a href="https://github.com" className="underline" target="_blank" rel="noopener noreferrer"> GitHub.</a>
-          </p>
+          </p> */}
         </div>
         
         <div className="lg:w-1/3 flex items-center">
