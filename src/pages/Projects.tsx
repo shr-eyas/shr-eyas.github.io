@@ -5,7 +5,7 @@ import { ProjectCard } from "@/components/project/ProjectCard";
 import { ProjectImage } from "@/components/project/ProjectImage";
 import { getRandomCaption } from "@/components/project/ProjectUtils";
 
-interface Project {
+interface Research {
   id: number;
   title: string;
   content: React.ReactNode;
@@ -20,8 +20,8 @@ interface Project {
   };
 }
 
-const Projects = () => {
-  const projects: Project[] = [
+const Research = () => {
+  const research: Research[] = [
     {
       id: 1,
       title: "Manipulating at the Edge of Instability",
@@ -162,7 +162,7 @@ const Projects = () => {
       </p>
       
       <div className="space-y-12">
-        {projects.map((project) => (
+        {research.map((project) => (
           <ProjectCard
             key={project.id}
             id={project.id}
@@ -179,4 +179,4 @@ const Projects = () => {
   );
 };
 
-export default Projects;
+export default Research;

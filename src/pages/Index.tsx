@@ -18,7 +18,7 @@ const Index = () => {
                 get to know me <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link 
-                to="/projects" 
+                to="/research" 
                 className="group inline-flex items-center text-lg text-foreground/90 hover:text-foreground transition-colors"
               >
                 see my work <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
