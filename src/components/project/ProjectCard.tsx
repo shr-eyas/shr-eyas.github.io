@@ -11,6 +11,7 @@ interface ProjectCardProps {
   type: "Research" | "Project" | "Self Project" | "Company" | "Academic";
   association: string;
   links?: {
+    paper?: string;
     github?: string;
     youtube?: string;
     projectPage?: string;

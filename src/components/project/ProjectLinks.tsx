@@ -4,6 +4,7 @@ import { Github, Youtube, ExternalLink } from "lucide-react";
 
 interface ProjectLinksProps {
   links?: {
+    paper?: string;
     github?: string;
     youtube?: string;
     projectPage?: string;
@@ -60,6 +61,22 @@ export const ProjectLinks = ({ links }: ProjectLinksProps) => {
           >
             <ExternalLink className="w-4 h-4" />
             Project Page
+          </a>
+        </Badge>
+      )}
+      {links.paper && (
+        <Badge 
+          variant="outline" 
+          className="rounded-md badge-hover-effect bg-green-500/10 hover:bg-green-500/20 text-green-700 transition-all duration-300 light:shadow-green-400/50 dark:bg-[#efefef]/10 dark:hover:bg-[#efefef]/20 dark:text-[#efefef] dark:border-[#efefef]/20"
+        >
+          <a
+            href={links.paper}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-2 py-1"
+          >
+            <ExternalLink className="w-4 h-4" />
+            Paper
           </a>
         </Badge>
       )}

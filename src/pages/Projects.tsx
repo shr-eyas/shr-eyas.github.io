@@ -16,6 +16,7 @@ interface Project {
     github?: string;
     youtube?: string;
     projectPage?: string;
+    paper?: string;
   };
 }
 
@@ -34,14 +35,15 @@ const Projects = () => {
             <ProjectImage 
               src="https://images.unsplash.com/photo-1470813740244-df37b8c1edcb"
               alt="Starry night patterns"
-              caption={getRandomCaption()}
+              caption="Testing caption 1"
             />
             <ProjectImage 
               src="https://images.unsplash.com/photo-1500673922987-e212871fec22"
               alt="Natural patterns"
-              caption={getRandomCaption()}
+              caption="Testing caption 2"
             />
           </div>
+          <p>A deep dive into mathematical patterns found in nature, featuring multiple equations and visualizations.</p>
           <div className="max-w-full overflow-x-auto py-4">
             <BlockMath math="\oint_{\partial \Omega} \omega = \int_{\Omega} d\omega \quad \text{(Stokes' Theorem)}" />
           </div>
@@ -113,7 +115,7 @@ const Projects = () => {
     },
     {
       id: 4,
-      title: "AI-Enhanced Visual Recognition",
+      title: "Adaptive Fuzzy Predictor based Fast Terminal Sliding Mode Controller Design for Two-link Robot Manipulator",
       content: (
         <div className="space-y-4">
           <p>
@@ -122,19 +124,32 @@ const Projects = () => {
           
           <div className="my-8"></div> {/* Added explicit spacing here */}
           
-          <div className="flex flex-col items-center mb-4">
+          {/* <div className="flex flex-col items-center mb-4">
             <img 
               src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcDFtbzlvNWU4Ym5hdjg5aGtrMjA3aG1jamdjazBkOGRlZXdtbDk4bSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7bugDTSonKZ3ONry/giphy.gif"
               alt="AI visualization gif"
               className="rounded-lg object-contain w-auto h-auto max-h-64"
             />
             <span className="text-sm text-muted-foreground mt-2">{getRandomCaption()}</span>
-          </div>
+          </div> */}
+
+            <div className="flex flex-col items-center mb-4">
+              <img 
+                src="/lovable-uploads/architecture.png"
+                alt="Proposed Architecture"
+                className="rounded-lg object-contain w-auto h-auto max-h-96"
+              />
+              <span className="text-sm text-muted-foreground mt-2">Architecture of proposed AFP-FTSMC</span>
+            </div>
+
         </div>
       ),
       image: "https://images.unsplash.com/photo-1582562124811-c09040d0a901",
-      type: "Company",
-      association: "EcoTech Solutions"
+      type: "Research",
+      association: "EECS, IIEST",
+      links: {
+        paper: "https://ieeexplore.ieee.org/document/10883745",
+      }
     }
   ];
 
