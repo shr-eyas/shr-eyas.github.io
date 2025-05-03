@@ -24,7 +24,7 @@ const Projects = () => {
   const projects: Project[] = [
     {
       id: 1,
-      title: "Complex Mathematics in Nature",
+      title: "Manipulating at the Edge of Instability",
       content: (
         <div className="space-y-4 overflow-x-auto">
           <p>A deep dive into mathematical patterns found in nature, featuring multiple equations and visualizations.</p>
@@ -62,7 +62,7 @@ const Projects = () => {
     },
     {
       id: 2,
-      title: "Wildlife Tracking Algorithm",
+      title: "Control Barrier Functions for Safe Reinforcement Learning",
       content: (
         <div className="space-y-4">
           <p>
@@ -89,7 +89,7 @@ const Projects = () => {
     },
     {
       id: 3,
-      title: "Neural Network Visualization",
+      title: "Iterative Learning for Manipulation and Grasping Against Unknown Resistance Fields that is Generalizable to Arbitrary Trajectories",
       content: (
         <div className="space-y-4">
           <p>Interactive visualization of neural network architectures and their learning processes.</p>
