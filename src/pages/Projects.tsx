@@ -135,7 +135,7 @@ const Projects = () => {
 
             <div className="flex flex-col items-center mb-4">
               <img 
-                src="/lovable-uploads/architecture.png"
+                src="/lovable-uploads/architecture.drawio.png"
                 alt="Proposed Architecture"
                 className="rounded-lg object-contain w-auto h-auto max-h-96"
               />
