@@ -8,7 +8,7 @@ const Index = () => {
         <div className="flex flex-col lg:flex-row items-center justify-between gap-16">
           <div className="lg:w-3/5 space-y-10 lg:-mt-32 z-10">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight md:leading-snug lg:leading-[1.3]">
-              Exploring the intersection of nature and mathematical logic
+              Exploring the intersection of nature and technology
             </h1>
             <div className="flex flex-col gap-2">
               <Link 
