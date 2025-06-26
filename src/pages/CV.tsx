@@ -5,7 +5,7 @@ import { useState } from "react";
 
 const CV = () => {
   // Placeholder for CV PDF - you would need to add your actual CV
-  const cvUrl = "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf";
+  const cvUrl = "/uploads/Shreyas_Kumar_Resume.pdf";
   
   const [isLoading, setIsLoading] = useState(true);
   

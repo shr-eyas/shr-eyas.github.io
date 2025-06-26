@@ -7,7 +7,7 @@ const About = () => {
       <div className="flex flex-col lg:flex-row gap-12">
         <div className="lg:w-2/3 space-y-6 text-justify leading-relaxed">
           <p>
-            I'm a <span className="font-bold">predoctoral researcher</span> at <a href="https://research.iitgn.ac.in/robotics/" className="underline" target="_blank" rel="noopener noreferrer">IITGN Robotics Laboratory</a>, 
+            I'm a <span className="font-bold">staff researcher</span> at <a href="https://research.iitgn.ac.in/robotics/" className="underline" target="_blank" rel="noopener noreferrer">IITGN Robotics Laboratory</a>, 
             with a research focus at the intersection of robotics, control, and learning. I am advised by Prof. Harish P.M. and 
             supported by <a href="https://addverb.com/" className="underline" target="_blank" rel="noopener noreferrer">Addverb Technologies</a>. 
             I completed my undergraduate degree in Mechanical Engineering from Indian Institute of Engineering Science and Technology (IIEST).
