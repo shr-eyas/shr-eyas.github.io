@@ -24,12 +24,12 @@ const Research = () => {
   const research: Research[] = [
     {
       id: 1,
-      title: "Manipulating at the Edge of Instability",
+      title: "Grasping at the Edge of Instability",
       content: (
         <div className="space-y-4 overflow-x-auto">
-          <p>A deep dive into mathematical patterns found in nature, featuring multiple equations and visualizations.</p>
+          <p>[Under Construction]</p>
           
-          <div className="my-8"></div> {/* Added explicit spacing here */}
+          {/* <div className="my-8"></div> 
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
             <ProjectImage 
@@ -42,34 +42,35 @@ const Research = () => {
               alt="Natural patterns"
               caption="Testing caption 2"
             />
-          </div>
+          </div> 
           <p>A deep dive into mathematical patterns found in nature, featuring multiple equations and visualizations.</p>
           <div className="max-w-full overflow-x-auto py-4">
             <BlockMath math="\oint_{\partial \Omega} \omega = \int_{\Omega} d\omega \quad \text{(Stokes' Theorem)}" />
           </div>
           <div className="max-w-full overflow-x-auto py-4">
             <BlockMath math="\frac{\partial^2 u}{\partial t^2} = c^2 \nabla^2 u + \sum_{i=1}^n \alpha_i \frac{\partial u}{\partial x_i} + f(x,t)" />
-          </div>
+          </div> */}
         </div>
       ),
       type: "Research",
-      association: "Mathematics Department",
-      links: {
-        github: "https://github.com/example/math-nature",
-        youtube: "https://youtube.com/watch?v=nature-math",
-        projectPage: "https://math-nature.example.com"
-      }
+      association: "IITGN Robotics Lab",
+      // links: {
+      //   github: "https://github.com/example/math-nature",
+      //   youtube: "https://youtube.com/watch?v=nature-math",
+      //   projectPage: "https://math-nature.example.com"
+      // }
     },
     {
       id: 2,
-      title: "Control Barrier Functions for Safe Reinforcement Learning",
+      title: "A Unified Framework for Bimanual Snap-Fit Assembly with Robot-Agnostic Snap Detection and Event-Triggered Compliance",
       content: (
         <div className="space-y-4">
-          <p>
+          <p>[Under Construction]</p>
+          {/* <p>
             An open-source algorithm for tracking wildlife movement patterns using satellite data.
           </p>
           
-          <div className="my-8"></div> {/* Added explicit spacing here */}
+          <div className="my-8"></div> 
           
           <div className="flex flex-col items-center mb-4">
             <img 
@@ -78,11 +79,11 @@ const Research = () => {
               className="rounded-lg object-contain w-auto h-auto max-h-64"
             />
             <span className="text-sm text-muted-foreground mt-2">{getRandomCaption()}</span>
-          </div>
+          </div> */}
         </div>
       ),
-      type: "Project",
-      association: "Conservation Tech Lab",
+      type: "Research",
+      association: "IITGN Robotics Lab",
       links: {
         github: "https://github.com/example/wildlife-tracking"
       }
@@ -92,9 +93,10 @@ const Research = () => {
       title: "Iterative Learning for Manipulation and Grasping Against Unknown Resistance Fields that is Generalizable to Arbitrary Trajectories",
       content: (
         <div className="space-y-4">
-          <p>Interactive visualization of neural network architectures and their learning processes.</p>
+        <p>[Under Construction]</p>
+          {/* <p>Interactive visualization of neural network architectures and their learning processes.</p>
           
-          <div className="my-8"></div> {/* Added explicit spacing here */}
+          <div className="my-8"></div> 
           
           <div className="flex flex-col items-center mb-4">
             <img 
@@ -103,7 +105,7 @@ const Research = () => {
               className="rounded-lg object-contain w-auto h-auto max-h-64"
             />
             <span className="text-sm text-muted-foreground mt-2">{getRandomCaption()}</span>
-          </div>
+          </div> */}
         </div>
       ),
       type: "Self Project",
@@ -118,20 +120,21 @@ const Research = () => {
       title: "Adaptive Fuzzy Predictor based Fast Terminal Sliding Mode Controller Design for Two-link Robot Manipulator",
       content: (
         <div className="space-y-4">
-          <p>
+          <p>[Under Construction]</p>
+          {/* <p>
             A machine learning system that automatically identifies endangered species in camera trap footage.
           </p>
           
-          <div className="my-8"></div> {/* Added explicit spacing here */}
+          <div className="my-8"></div> 
           
-          {/* <div className="flex flex-col items-center mb-4">
+          <div className="flex flex-col items-center mb-4">
             <img 
               src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcDFtbzlvNWU4Ym5hdjg5aGtrMjA3aG1jamdjazBkOGRlZXdtbDk4bSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7bugDTSonKZ3ONry/giphy.gif"
               alt="AI visualization gif"
               className="rounded-lg object-contain w-auto h-auto max-h-64"
             />
             <span className="text-sm text-muted-foreground mt-2">{getRandomCaption()}</span>
-          </div> */}
+          </div>
 
             <div className="flex flex-col items-center mb-4">
               <img 
@@ -140,7 +143,7 @@ const Research = () => {
                 className="rounded-lg object-contain w-auto h-auto max-h-96"
               />
               <span className="text-sm text-muted-foreground mt-2">Architecture of proposed AFP-FTSMC</span>
-            </div>
+            </div> */}
 
         </div>
       ),
