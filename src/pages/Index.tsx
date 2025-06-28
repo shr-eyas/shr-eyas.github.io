@@ -27,7 +27,7 @@ const Index = () => {
             </div>
           </div>
 
-          <div className="lg:absolute lg:left-[60%] lg:-top-32 lg:w-[600px] w-[400px] z-0 relative">
+          <div className="lg:absolute lg:left-[60%] lg:top-4 xl:top-0 2xl:-top-16 lg:w-[500px] xl:w-[550px] 2xl:w-[600px] w-[400px] z-0 relative">
             <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
               <div className="absolute inset-0 bg-gradient-radial from-primary/20 via-transparent to-transparent blur-2xl opacity-70"></div>
             </div>
@@ -35,7 +35,7 @@ const Index = () => {
               <img 
                 src="/uploads/enfp.png"
                 alt="Geometric dolphin illustration"
-                className="w-full h-auto relative"
+                className="w-full h-auto relative max-h-[60vh] lg:max-h-[70vh] xl:max-h-[80vh] object-contain"
               />
             </div>
           </div>
