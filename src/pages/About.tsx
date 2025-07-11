@@ -7,15 +7,23 @@ const About = () => {
       <div className="flex flex-col lg:flex-row gap-12">
         <div className="lg:w-2/3 space-y-6 text-justify leading-relaxed">
           <p>
-            I'm a <span className="font-bold">staff researcher</span> at <a href="https://research.iitgn.ac.in/robotics/" className="underline" target="_blank" rel="noopener noreferrer">IITGN Robotics Laboratory</a>, 
-            with a research focus at the intersection of robotics, control, and learning. I am advised by Prof. Harish P.M. and 
-            supported by <a href="https://addverb.com/" className="underline" target="_blank" rel="noopener noreferrer">Addverb Technologies</a>. 
-            I completed my undergraduate degree in Mechanical Engineering from Indian Institute of Engineering Science and Technology (IIEST).
+            I'm a <span className="font-bold">predoctoral fellow</span> at <a href="https://cps.iisc.ac.in/" 
+            className="underline" target="_blank" rel="noopener noreferrer">Robert Bosch Centre for Cyber-Physical Systems (RBCCPS), 
+            IISc Bangalore</a>, with a research focus at the intersection of robotics, control, and learning. I am advised by Prof. Ravi 
+            Prakash. 
+            
+            Previously, I was a <span className="font-bold">staff researcher</span> at 
+            <a href="https://research.iitgn.ac.in/robotics/" className="underline" target="_blank" 
+            rel="noopener noreferrer">IITGN Robotics Laboratory</a>, where I worked under the guidance of Prof. Harish P.M., supported by 
+            <a href="https://addverb.com/" className="underline" target="_blank" rel="noopener noreferrer">Addverb Technologies</a>. 
+
+            I completed my undergraduate degree in Mechanical Engineering from Indian Institute of Engineering Science and 
+            Technology (IIEST).
           </p>
           
           <p>
-            Much of my thinking is shaped by a deep curiosity of how systems adapt, interact, and evolve
-            — and I've always been drawn to understanding them using the language of physics and mathematics.
+            Much of my thinking is shaped by a deep curiosity of how systems adapt, interact, and evolve, and I've always been drawn to 
+            understanding them using the language of physics and mathematics.
             I tend to find beauty in structured systems, and yet am drawn to thier unpredictability and uncertainty.
           </p>
 
@@ -31,7 +39,7 @@ const About = () => {
             My vision is to build generalizable robotic systems capable of physically interacting with complex environments 
             in ways that are robust, safe, and adaptable. I am particularly fascinated by how we can combine conventional 
             control theory with data-driven learning to achieve reliable, real-world manipulation. I aim to contribute towards 
-            making contact-rich robot behavior both intelligent and reliable — not just in the lab, but in everyday human settings.
+            making contact-rich robot behavior both intelligent and reliable, not just in the lab, but in everyday human settings.
           </p>
           
           {/* <p>

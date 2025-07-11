@@ -6,7 +6,7 @@ const Contact = () => {
     {
       icon: <MapPin className="h-5 w-5" />,
       label: "Location",
-      value: "Ahmedabad, Gujarat, India",
+      value: "Bangalore, Karnataka, India",
       link: null
     },
     {
