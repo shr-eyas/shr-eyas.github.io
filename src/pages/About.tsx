@@ -12,10 +12,9 @@ const About = () => {
             Bangalore, with a research focus at the intersection of robotics, control, and learning. I am advised by Prof. Ravi 
             Prakash. 
             
-            Previously, I was a <span className="font-bold">staff researcher</span> at 
-            <a href="https://research.iitgn.ac.in/robotics/" className="underline" target="_blank" 
-            rel="noopener noreferrer"> IITGN Robotics Laboratory</a>, where I worked under the guidance of Prof. Harish P.M., supported by 
-            <a href="https://addverb.com/" className="underline" target="_blank" rel="noopener noreferrer"> Addverb Technologies</a>. 
+            Previously, I was a <span className="font-bold">staff researcher</span> at <a href="https://research.iitgn.ac.in/robotics/" className="underline" target="_blank" 
+            rel="noopener noreferrer">IITGN Robotics Laboratory</a>, where I worked under the guidance of Prof. Harish P.M., supported 
+            by <a href="https://addverb.com/" className="underline" target="_blank" rel="noopener noreferrer">Addverb Technologies</a>. 
 
             I completed my undergraduate degree in Mechanical Engineering from Indian Institute of Engineering Science and 
             Technology (IIEST).
@@ -54,7 +53,7 @@ const About = () => {
           <div className="w-full max-w-[300px] mx-auto">
             <AspectRatio ratio={1/1} className="overflow-hidden rounded-lg shadow-lg">
               <img 
-                src="https://images.unsplash.com/photo-1518770660439-4636190af475" 
+                src="/uploads/Shreyas Kumar.jpg"
                 alt="Shreyas Kumar" 
                 className="w-full h-full object-cover"
               />
