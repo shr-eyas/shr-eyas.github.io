@@ -8,14 +8,14 @@ const About = () => {
         <div className="lg:w-2/3 space-y-6 text-justify leading-relaxed">
           <p>
             I'm a <span className="font-bold">predoctoral fellow</span> at <a href="https://cps.iisc.ac.in/" 
-            className="underline" target="_blank" rel="noopener noreferrer">Robert Bosch Centre for Cyber-Physical Systems (RBCCPS), 
-            IISc Bangalore</a>, with a research focus at the intersection of robotics, control, and learning. I am advised by Prof. Ravi 
+            className="underline" target="_blank" rel="noopener noreferrer">Robert Bosch Centre for Cyber-Physical Systems (RBCCPS)</a>, IISc 
+            Bangalore, with a research focus at the intersection of robotics, control, and learning. I am advised by Prof. Ravi 
             Prakash. 
             
             Previously, I was a <span className="font-bold">staff researcher</span> at 
             <a href="https://research.iitgn.ac.in/robotics/" className="underline" target="_blank" 
-            rel="noopener noreferrer">IITGN Robotics Laboratory</a>, where I worked under the guidance of Prof. Harish P.M., supported by 
-            <a href="https://addverb.com/" className="underline" target="_blank" rel="noopener noreferrer">Addverb Technologies</a>. 
+            rel="noopener noreferrer"> IITGN Robotics Laboratory</a>, where I worked under the guidance of Prof. Harish P.M., supported by 
+            <a href="https://addverb.com/" className="underline" target="_blank" rel="noopener noreferrer"> Addverb Technologies</a>. 
 
             I completed my undergraduate degree in Mechanical Engineering from Indian Institute of Engineering Science and 
             Technology (IIEST).
