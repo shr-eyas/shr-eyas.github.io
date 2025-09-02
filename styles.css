@@ -256,5 +256,5 @@ body, .left-sidebar, .demo-card, .navbar a, .tech-tag, h1, h2, h3, p, li, a {
 body:not(.dark) { background:#ffffff; color:#333; }
 body:not(.dark) h1, body:not(.dark) h2, body:not(.dark) h3 { color:#1a365d; }
 body:not(.dark) a { color:#000; }
-body:not(.dark) .navbar a { color:#36414d; }
-body:not(.dark) .navbar a:hover { color:#000; }
+body:not(.dark) .navbar a { color:#6b7280; }      /* gray until hover */
+body:not(.dark) .navbar a:hover { color:#1f2937; }/* darker on hover */
