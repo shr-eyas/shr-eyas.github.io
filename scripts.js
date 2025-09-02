@@ -63,18 +63,29 @@ document.addEventListener('DOMContentLoaded', function () {
     }, { once: true });
   }
 
-  // ===== Night mode toggle =====
+  // Night mode: respect system, persist, label
   const toggle = document.getElementById('theme-toggle');
   const saved = localStorage.getItem('prefers-theme');
-  if (saved === 'dark') document.body.classList.add('dark');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+  if ((saved === 'dark') || (saved === null && prefersDark)) {
+    document.body.classList.add('dark');
+  }
+
+  function setToggleLabel() {
+    if (!toggle) return;
+    toggle.textContent = document.body.classList.contains('dark') ? 'Day' : 'Night';
+  }
+  setToggleLabel();
 
   if (toggle) {
     toggle.addEventListener('click', () => {
       document.body.classList.toggle('dark');
-      localStorage.setItem(
-        'prefers-theme',
+      localStorage.setItem('prefers-theme',
         document.body.classList.contains('dark') ? 'dark' : 'light'
       );
+      setToggleLabel();
     });
   }
+
 });

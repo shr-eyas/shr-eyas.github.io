@@ -644,3 +644,42 @@ body.dark .tech-tag { background:#0f172a; color:#9ecbff; }
   background: transparent; cursor: pointer; font: inherit;
 }
 body.dark .theme-toggle { border-color:#374151; color:#e5e7eb; }
+
+/* --- Clean Night Mode --- */
+body.dark { background:#0c111b; color:#e6eaf2; }
+body.dark h1, body.dark h2, body.dark h3 { color:#e8eefc; }
+body.dark p, body.dark li { color:#c7d1e0; }
+body.dark a { color:#8ab4f8; }
+body.dark a:hover { color:#c4d9ff; }
+body.dark h2 { border-bottom-color:#1e293b; }
+body.dark .section-divider { background:#1e293b; }
+
+/* Sidebar */
+body.dark .left-sidebar {
+  background:#0f172a;
+  border:1px solid #172554;
+  box-shadow: 0 10px 25px rgba(0,0,0,.45);
+}
+body.dark .left-sidebar .header-content h1 { color:#c7d2fe; }
+body.dark .location span,
+body.dark .social-icon span { color:#cbd5e1; }
+body.dark .social-icon img,
+body.dark .location-icon { filter: invert(.9); }  /* keeps PNG icons visible */
+
+/* Navbar */
+body.dark .navbar a { color:#9aa4b2; }
+body.dark .navbar a:hover { color:#eef2ff; }
+body.dark .navbar a::after { background:#4f46e5; } /* underline color */
+
+/* Cards / tags */
+body.dark .demo-card { background:#0f172a; box-shadow: 0 12px 30px rgba(0,0,0,.5); }
+body.dark .tech-tag { background:#1e293b; color:#a5b4fc; }
+
+/* Footer */
+body.dark footer, body.dark .footer-content { background:transparent; }
+
+/* Smooth theme transition */
+html { color-scheme: light dark; }
+body, .left-sidebar, .demo-card, .navbar a, .tech-tag, h1, h2, h3, p, li, a {
+  transition: color .2s ease, background-color .2s ease, border-color .2s ease;
+}
