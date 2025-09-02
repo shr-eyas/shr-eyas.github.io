@@ -228,7 +228,7 @@ body.dark .section-divider { background:#1e293b; }
 
 /* Sidebar (dark) */
 body.dark .left-sidebar {
-  background:#0c111b; border:1px solid #172554; box-shadow: 0 10px 25px rgba(0,0,0,.45);
+  background:#0c111b;
 }
 body.dark .left-sidebar .header-content h1 { color:#c7d2fe; }
 body.dark .location span, body.dark .social-icon span { color:#cbd5e1; }
