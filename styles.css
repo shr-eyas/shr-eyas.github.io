@@ -258,3 +258,14 @@ body:not(.dark) h1, body:not(.dark) h2, body:not(.dark) h3 { color:#1a365d; }
 body:not(.dark) a { color:#000; }
 body:not(.dark) .navbar a { color:#6b7280; }      
 body:not(.dark) .navbar a:hover { color:#1f2937; }
+
+/* Fix: dark-mode Contact heading */
+body.dark h4 { color:#e8eefc; }
+
+/* Unify link color for <a> and "unscramble" */
+:root { --link:#1d4ed8; --link-hover:#153eaf; }        /* day */
+body.dark { --link:#8ab4f8; --link-hover:#c4d9ff; }    /* night */
+
+a, .linklike { color: var(--link) !important; text-decoration: underline; }
+a:hover, .linklike:hover { color: var(--link-hover) !important; }
+a:visited { color: var(--link) !important; }
