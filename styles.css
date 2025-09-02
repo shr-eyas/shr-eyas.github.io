@@ -613,3 +613,34 @@ footer {
     background-color: #352aff4f;
     width: 100%;
 }
+
+/* underline/bold utilities */
+.underline { text-decoration: underline; }
+.font-bold { font-weight: 700; } /* if you still want this class */
+
+/* unscramble visuals */
+.linklike {
+  background: none; border: 0; padding: 0;
+  color: #2b6cb0; text-decoration: underline; cursor: pointer; font: inherit;
+}
+#email-scramble { white-space: nowrap; }
+#email-scramble .ch { display: inline-block; will-change: transform; }
+.hidden { display: none !important; }
+
+/* night mode */
+body.dark { background:#0b0e13; color:#e5e7eb; }
+body.dark h1, body.dark h2, body.dark h3 { color:#d1e2ff; }
+body.dark a { color:#9ecbff; }
+body.dark h2 { border-bottom-color:#1f2937; }
+body.dark .navbar a { color:#9ca3af; }
+body.dark .navbar a:hover { color:#e5e7eb; }
+body.dark .navbar a::after { background-color:#9ecbff; }
+body.dark .left-sidebar { background-color: rgba(17,24,39,0.85); }
+body.dark .tech-tag { background:#0f172a; color:#9ecbff; }
+
+/* toggle button */
+.theme-toggle {
+  margin-left: 10px; padding: 6px 10px; border:1px solid #e5e7eb;
+  background: transparent; cursor: pointer; font: inherit;
+}
+body.dark .theme-toggle { border-color:#374151; color:#e5e7eb; }

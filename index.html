@@ -57,6 +57,7 @@
       <a href="#about"><i class="fas fa-user-alt"></i> About</a>
       <a href="#interests"><i class="fas fa-brain"></i> Research Interests</a>
       <a href="#research"><i class="fas fa-flask"></i> Publications</a>
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle dark mode">Night</button>
       <!-- <a href="#quotes"><i class="fas fa-book-open"></i> Quotes</a> -->
       <!-- <a href="#projects"><i class="fas fa-project-diagram"></i> Projects</a> -->
       <!-- <a href="#demonstrations"><i class="fas fa-lightbulb"></i> Explanations</a> -->
@@ -111,13 +112,13 @@
           <h2>About Me</h2>
           <p>
             I'm a predoctoral fellow at <a href="https://cps.iisc.ac.in/" 
-            className="underline" target="_blank" rel="noopener noreferrer">Robert Bosch Centre for Cyber-Physical Systems (RBCCPS)</a>, IISc 
+            class="underline" target="_blank" rel="noopener noreferrer">Robert Bosch Centre for Cyber-Physical Systems (RBCCPS)</a>, IISc 
             Bangalore, with a research focus at the intersection of robotics, control, and learning. I am advised by Prof. Ravi 
             Prakash. 
             
-            Previously, I was a <span className="font-bold">staff researcher</span> at <a href="https://research.iitgn.ac.in/robotics/" className="underline" target="_blank" 
+            Previously, I was a <span class="font-bold">staff researcher</span> at <a href="https://research.iitgn.ac.in/robotics/" class="underline" target="_blank" 
             rel="noopener noreferrer">IITGN Robotics Laboratory</a>, where I worked under the guidance of Prof. Harish P.M., supported 
-            by <a href="https://addverb.com/" className="underline" target="_blank" rel="noopener noreferrer">Addverb Technologies</a>. 
+            by <a href="https://addverb.com/" class="underline" target="_blank" rel="noopener noreferrer">Addverb Technologies</a>. 
 
             I completed my undergraduate degree in Mechanical Engineering from Indian Institute of Engineering Science and 
             Technology (IIEST).
@@ -130,7 +131,7 @@
           </p>
 
           <p>
-            <span style="text-decoration: underline;" className="font-bold">Creative Outlet</span>. Outside of robotics, I'm deeply interested in nature, music, and philosophy. 
+            <span style="text-decoration: underline;" class="font-bold">Creative Outlet</span>. Outside of robotics, I'm deeply interested in nature, music, and philosophy. 
             I enjoy playing guitar, writing about the human condition, and taking reflective photo-walks. 
           </p>
 
@@ -400,8 +401,11 @@
       <div class="footer-content">
         <div class="footer-section">
           <h4 style="font-style: normal;">Contact</h4>
-          <p><i class="fas fa-envelope"></i> Email: shreyaskumar@iisc.ac.in</p>
-          <p><i class="fas fa-university"></i>Cyber-Physical Systems, Indian Institute of Science</p>
+          <p><i class="fas fa-envelope"></i> email:
+            <span id="email-scramble" data-email="shreyaskumar@iisc.ac.in"></span>
+            <button id="unscramble" class="linklike" type="button">unscramble</button>
+          </p>
+          <p><i class="fas fa-university"></i> Cyber-Physical Systems, Indian Institute of Science</p>
         </div>
         <div class="footer-section">
           <p>Website adapted from <a href="https://iparramartin.github.io/">Iñigo Parra</a>. </p>
