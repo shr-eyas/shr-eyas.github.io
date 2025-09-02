@@ -1,5 +1,5 @@
-// Smooth scrolling
 document.addEventListener('DOMContentLoaded', function () {
+  // Smooth scrolling
   document.querySelectorAll('.navbar a').forEach(a => {
     a.addEventListener('click', function (e) {
       e.preventDefault();
@@ -12,17 +12,18 @@ document.addEventListener('DOMContentLoaded', function () {
   // ===== Email unscramble (FLIP) =====
   const container = document.getElementById('email-scramble');
   const btn = document.getElementById('unscramble');
+
   if (container && btn) {
     const email = (container.dataset.email || '').trim();
-    const chars = Array.from(email);
+    const chars = [...email];
 
-    // build a random permutation not equal to identity
+    // random permutation not equal to identity
     const idx = [...chars.keys()];
     for (let i = idx.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [idx[i], idx[j]] = [idx[j], idx[i]];
     }
-    if (idx.every((v, i) => v === i) && idx.length > 1) [idx[0], idx[1]] = [idx[1], idx[0]];
+    if (idx.length > 1 && idx.every((v, i) => v === i)) [idx[0], idx[1]] = [idx[1], idx[0]];
 
     // render scrambled order
     idx.forEach(finalPos => {
@@ -36,21 +37,32 @@ document.addEventListener('DOMContentLoaded', function () {
     btn.addEventListener('click', () => {
       btn.classList.add('hidden');
 
-      const nodes = Array.from(container.children);
-      const first = nodes.map(n => n.getBoundingClientRect());
+      const nodes = [...container.children];
 
-      // reorder to final email order
-      nodes.sort((a, b) => (+a.dataset.final) - (+b.dataset.final))
-           .forEach(n => container.appendChild(n));
+      // map each node to its first rect
+      const first = new Map();
+      nodes.forEach(n => first.set(n, n.getBoundingClientRect()));
 
-      const last = nodes.map(n => n.getBoundingClientRect());
+      // reorder to final order
+      nodes
+        .sort((a, b) => (+a.dataset.final) - (+b.dataset.final))
+        .forEach(n => container.appendChild(n));
 
-      nodes.forEach((n, i) => {
-        const dx = first[i].left - last[i].left;
-        const dy = first[i].top - last[i].top;
+      // invert
+      nodes.forEach(n => {
+        const f = first.get(n);
+        const l = n.getBoundingClientRect();
+        const dx = f.left - l.left;
+        const dy = f.top - l.top;
         n.style.transform = `translate(${dx}px, ${dy}px)`;
-        n.style.transition = 'transform 600ms cubic-bezier(.2,.7,.3,1)';
-        requestAnimationFrame(() => { n.style.transform = 'translate(0,0)'; });
+      });
+
+      // play
+      requestAnimationFrame(() => {
+        nodes.forEach(n => {
+          n.style.transition = 'transform 500ms cubic-bezier(.2,.7,.3,1)';
+          n.style.transform = 'translate(0,0)';
+        });
       });
 
       nodes[nodes.length - 1].addEventListener('transitionend', () => {
@@ -63,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }, { once: true });
   }
 
-  // Night mode: respect system, persist, label
+  // ===== Night/Day toggle =====
   const toggle = document.getElementById('theme-toggle');
   const saved = localStorage.getItem('prefers-theme');
   const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -72,20 +84,14 @@ document.addEventListener('DOMContentLoaded', function () {
     document.body.classList.add('dark');
   }
 
-  function setToggleLabel() {
-    if (!toggle) return;
-    toggle.textContent = document.body.classList.contains('dark') ? 'Day' : 'Night';
-  }
-  setToggleLabel();
+  const setLabel = () => { if (toggle) toggle.textContent = document.body.classList.contains('dark') ? 'Day' : 'Night'; };
+  setLabel();
 
   if (toggle) {
     toggle.addEventListener('click', () => {
       document.body.classList.toggle('dark');
-      localStorage.setItem('prefers-theme',
-        document.body.classList.contains('dark') ? 'dark' : 'light'
-      );
-      setToggleLabel();
+      localStorage.setItem('prefers-theme', document.body.classList.contains('dark') ? 'dark' : 'light');
+      setLabel();
     });
   }
-
 });
