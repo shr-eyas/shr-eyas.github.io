@@ -7,27 +7,30 @@ document.addEventListener('DOMContentLoaded', function () {
     track.insertAdjacentHTML('beforeend', track.innerHTML);
     track.dataset.looped = '1';
 
+    let lastDistance = 0;
     const setLoopDistance = () => {
-      // move by exactly one set (half of doubled content)
       const distance = track.scrollWidth / 2;
-      track.style.setProperty('--loop-distance', distance + 'px');
+      // only update and restart if the distance changed meaningfully
+      if (Math.abs(distance - lastDistance) > 1) {
+        track.style.setProperty('--loop-distance', distance + 'px');
+        track.style.animation = 'none';
+        void track.offsetWidth;     // reflow
+        track.style.animation = '';
+        lastDistance = distance;
+      }
     };
 
-    // compute now, after load, and on resize
+    // initial compute
     setLoopDistance();
 
-    // restart CSS animation cleanly (prevents flicker at loop edge)
-    track.style.animation = 'none';
-    void track.offsetWidth;          // force reflow
-    track.style.animation = '';
+    // keep fresh without thrashing during scroll
     window.addEventListener('load', setLoopDistance);
-    window.addEventListener('resize', () => {
-      setLoopDistance();
-      track.style.animation = 'none';
-      void track.offsetWidth;
-      track.style.animation = '';
-    });
+    window.addEventListener('orientationchange', setLoopDistance);
+    if ('ResizeObserver' in window) {
+      new ResizeObserver(setLoopDistance).observe(track);
+    }
   }
+
 
   // Smooth scrolling
   document.querySelectorAll('.navbar a').forEach(a => {
