@@ -15,8 +15,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // compute now, after load, and on resize
     setLoopDistance();
+
+    // restart CSS animation cleanly (prevents flicker at loop edge)
+    track.style.animation = 'none';
+    void track.offsetWidth;          // force reflow
+    track.style.animation = '';
     window.addEventListener('load', setLoopDistance);
-    window.addEventListener('resize', setLoopDistance);
+    window.addEventListener('resize', () => {
+      setLoopDistance();
+      track.style.animation = 'none';
+      void track.offsetWidth;
+      track.style.animation = '';
+    });
   }
 
   // Smooth scrolling
