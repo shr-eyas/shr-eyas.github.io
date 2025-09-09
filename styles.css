@@ -222,6 +222,7 @@ p {
 
 .carousel__track {
     display: flex;
+    width: calc(100% * 4); 
     animation: scrollPX 120s linear infinite;
     will-change: transform;
 }
