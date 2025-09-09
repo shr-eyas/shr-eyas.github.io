@@ -665,9 +665,18 @@ footer {
 
 /* ===== Mobile-only fixes ===== */
 
-/* 1) Email: make scrambled color match link color (black) */
+/* Mobile: make "unscramble" look like normal link color */
 @media screen and (max-width: 768px) {
-  #email-scramble .ch { color: #000; }
+  #unscramble.linklike {
+    color: #000 !important;          /* match <a> color */
+    -webkit-appearance: none;        /* avoid iOS blue button tint */
+    appearance: none;
+  }
+  #unscramble.linklike:hover,
+  #unscramble.linklike:focus {
+    color: #36414d;                  /* optional: match your link hover */
+    outline: none;
+  }
 }
 
 /* 2) Robots grid: consistent sizing and alignment on phones/tablets */
