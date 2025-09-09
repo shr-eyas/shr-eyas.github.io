@@ -1,50 +1,50 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-  // ===== Carousel: seamless infinite loop (all viewports, Safari-safe) =====
+  // ===== Carousel: flicker-free infinite loop (iOS Safari safe) =====
   const track = document.querySelector('.carousel__track');
   if (track && !track.dataset.looped) {
-    // duplicate once so end meets start
-    track.insertAdjacentHTML('beforeend', track.innerHTML);
     track.dataset.looped = '1';
 
-    const DURATION_MS = 20000;   // one full set scroll time; change to adjust speed
-    let distance = 0;             // width of one set (px)
-    let speed = 0;                // px per ms
-    let offset = 0;               // current scroll offset (px)
+    const DURATION_MS = 20000;   // time to scroll one full set
+    const MAX_DT = 20;           // cap per-frame delta (ms)
     let last = performance.now();
-    const MAX_DT = 20;            // cap to 20 ms (~50 fps) to avoid jumps
+    let offset = 0;              // px translated to the left
 
-    const compute = () => {
-      const newDistance = track.scrollWidth / 2;
-      const phase = distance ? (offset % distance) / distance : 0;
-      distance = newDistance;
-      speed = distance / DURATION_MS;
-      offset = phase * distance;
+    // width including horizontal margins
+    const outerW = (el) => {
+      const r = el.getBoundingClientRect();
+      const cs = getComputedStyle(el);
+      return r.width + parseFloat(cs.marginLeft) + parseFloat(cs.marginRight);
     };
+
+    // px per ms so that one full set passes in DURATION_MS
+    const speed = () => track.scrollWidth / DURATION_MS;
 
     const tick = (now) => {
       const dtRaw = now - last;
-      const dt = Math.min(dtRaw, MAX_DT);   // clamp big jumps from Safari
-      // preserve leftover so time accounting stays accurate
+      const dt = Math.min(dtRaw, MAX_DT);
       last = now - (dtRaw - dt);
 
-      offset += dt * speed;
-      if (offset >= distance) {
-        // subtract multiples to stay inside [0, distance)
-        offset -= distance * Math.floor(offset / distance);
+      offset += dt * speed();
+
+      // Rotate children instead of jumping the whole track
+      while (track.firstElementChild && offset >= outerW(track.firstElementChild)) {
+        const w = outerW(track.firstElementChild);
+        offset -= w;
+        track.appendChild(track.firstElementChild);
       }
 
       track.style.transform = `translate3d(${-offset}px,0,0)`;
       requestAnimationFrame(tick);
     };
 
-    compute();
-    requestAnimationFrame(tick);
+    const start = () => { last = performance.now(); requestAnimationFrame(tick); };
+    if (document.readyState === 'complete') start();
+    else window.addEventListener('load', start);
 
-    // Recompute when layout changes without snapping back
-    if ('ResizeObserver' in window) new ResizeObserver(compute).observe(track);
-    window.addEventListener('orientationchange', compute);
+    // No modulo, no animation restarts, no duplication
   }
+
 
   // Smooth scrolling
   document.querySelectorAll('.navbar a').forEach(a => {
