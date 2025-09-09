@@ -220,10 +220,16 @@ p {
     transform: rotateZ(180deg);
 }
 
-.carousel__track {
+/* .carousel__track {
     display: flex;
     animation: scrollPX 40s linear infinite;
     will-change: transform;
+} */
+
+.carousel__track {
+    display: flex;
+    will-change: transform;
+    transform: translate3d(0,0,0); /* force GPU compositing on Safari */
 }
 
 /* How many cards should fit in the viewport width */

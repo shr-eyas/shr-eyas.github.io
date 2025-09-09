@@ -1,35 +1,43 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-  // ===== Carousel: seamless infinite loop (all viewports) =====
+  // ===== Carousel: seamless infinite loop (all viewports, Safari-safe) =====
   const track = document.querySelector('.carousel__track');
   if (track && !track.dataset.looped) {
-    // duplicate one full set of slides so the end meets the start
+    // duplicate once so end meets start
     track.insertAdjacentHTML('beforeend', track.innerHTML);
     track.dataset.looped = '1';
 
-    let lastDistance = 0;
-    const setLoopDistance = () => {
-      const distance = track.scrollWidth / 2;
-      // only update and restart if the distance changed meaningfully
-      if (Math.abs(distance - lastDistance) > 1) {
-        track.style.setProperty('--loop-distance', distance + 'px');
-        track.style.animation = 'none';
-        void track.offsetWidth;     // reflow
-        track.style.animation = '';
-        lastDistance = distance;
-      }
+    const DURATION_MS = 120000;   // one full set scroll time; change to adjust speed
+    let distance = 0;             // width of one set (px)
+    let speed = 0;                // px per ms
+    let offset = 0;               // current scroll offset (px)
+    let last = performance.now();
+
+    const compute = () => {
+      const newDistance = track.scrollWidth / 2;
+      // preserve phase across recomputes
+      const phase = distance ? (offset % distance) / distance : 0;
+      distance = newDistance;
+      speed = distance / DURATION_MS;
+      offset = phase * distance;
     };
 
-    // initial compute
-    setLoopDistance();
+    const tick = (now) => {
+      const dt = now - last;
+      last = now;
+      offset = (offset + dt * speed) % distance;
+      track.style.transform = `translate3d(${-offset}px,0,0)`;
+      requestAnimationFrame(tick);
+    };
 
-    // keep fresh without thrashing during scroll
-    window.addEventListener('load', setLoopDistance);
-    window.addEventListener('orientationchange', setLoopDistance);
-    if ('ResizeObserver' in window) {
-      new ResizeObserver(setLoopDistance).observe(track);
-    }
+    compute();
+    requestAnimationFrame(tick);
+
+    // Recompute when layout changes without snapping back
+    if ('ResizeObserver' in window) new ResizeObserver(compute).observe(track);
+    window.addEventListener('orientationchange', compute);
   }
+
 
 
   // Smooth scrolling
