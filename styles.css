@@ -718,7 +718,4 @@ footer {
   .left-sidebar + br + br,
   .left-sidebar + br + br + br,
   .left-sidebar + br + br + br + br { display: none; }
-
-  /* ensure the section starts tight */
-  #about { margin-top: 0; }
 }
