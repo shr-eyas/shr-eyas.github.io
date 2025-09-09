@@ -226,15 +226,28 @@ p {
     will-change: transform;
 }
 
+/* How many cards should fit in the viewport width */
+.carousel { --cards-per-view: 4; }  /* desktop default */
+
 .carousel__img {
-    flex: 0 0 66.6667%;   /* same visual size you liked (≈ 4/6 of container) */
-    width: auto;          /* stop tying width to track width */
-    height: 300px;
-    margin: 5px;
-    object-fit: cover;
-    border-radius: 2%;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
+  flex: 0 0 calc(100% / var(--cards-per-view));
+  height: clamp(160px, 28vw, 300px);   /* responsive height cap */
+  margin: 5px;
+  object-fit: cover;
+  border-radius: 2%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Tweak per breakpoint if you want */
+@media (max-width: 1024px) {
+  .carousel { --cards-per-view: 3; }
+}
+@media (max-width: 768px) {
+  .carousel { --cards-per-view: 2.5; }  /* shows 2 full + a peek */
+}
+@media (max-width: 480px) {
+  .carousel { --cards-per-view: 2; }
 }
 
 
