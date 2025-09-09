@@ -12,10 +12,10 @@ document.addEventListener('DOMContentLoaded', function () {
     let speed = 0;                // px per ms
     let offset = 0;               // current scroll offset (px)
     let last = performance.now();
+    const MAX_DT = 20;            // cap to 20 ms (~50 fps) to avoid jumps
 
     const compute = () => {
       const newDistance = track.scrollWidth / 2;
-      // preserve phase across recomputes
       const phase = distance ? (offset % distance) / distance : 0;
       distance = newDistance;
       speed = distance / DURATION_MS;
@@ -23,9 +23,17 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 
     const tick = (now) => {
-      const dt = now - last;
-      last = now;
-      offset = (offset + dt * speed) % distance;
+      const dtRaw = now - last;
+      const dt = Math.min(dtRaw, MAX_DT);   // clamp big jumps from Safari
+      // preserve leftover so time accounting stays accurate
+      last = now - (dtRaw - dt);
+
+      offset += dt * speed;
+      if (offset >= distance) {
+        // subtract multiples to stay inside [0, distance)
+        offset -= distance * Math.floor(offset / distance);
+      }
+
       track.style.transform = `translate3d(${-offset}px,0,0)`;
       requestAnimationFrame(tick);
     };
