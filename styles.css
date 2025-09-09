@@ -662,3 +662,39 @@ footer {
 @media screen and (max-width: 480px) {
   .robot-grid { grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); }
 }
+
+/* ===== Mobile-only fixes ===== */
+
+/* 1) Email: make scrambled color match link color (black) */
+@media screen and (max-width: 768px) {
+  #email-scramble .ch { color: #000; }
+}
+
+/* 2) Robots grid: consistent sizing and alignment on phones/tablets */
+@media screen and (max-width: 768px) {
+  .robot-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .robot-card { padding: 6px 0; }
+  .robot-card img {
+    width: 100%;
+    max-width: 140px;
+    aspect-ratio: 1 / 1;   /* keep square */
+    height: auto;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 480px) {
+  .robot-card img { max-width: 120px; }
+}
+
+/* 3) Writing cards: prevent squeeze */
+@media screen and (max-width: 1024px) {       /* tablets and below: 2 columns */
+  .demos-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media screen and (max-width: 600px) {        /* phones: single column */
+  .demos-grid { grid-template-columns: 1fr; }
+  .demo-info h3 { font-size: 1.1rem; }
+  .demo-info p  { font-size: 0.95rem; }
+}
+
