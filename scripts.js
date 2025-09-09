@@ -46,8 +46,6 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('orientationchange', compute);
   }
 
-
-
   // Smooth scrolling
   document.querySelectorAll('.navbar a').forEach(a => {
     a.addEventListener('click', function (e) {
