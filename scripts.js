@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
     track.insertAdjacentHTML('beforeend', track.innerHTML);
     track.dataset.looped = '1';
 
-    const DURATION_MS = 120000;   // one full set scroll time; change to adjust speed
+    const DURATION_MS = 20000;   // one full set scroll time; change to adjust speed
     let distance = 0;             // width of one set (px)
     let speed = 0;                // px per ms
     let offset = 0;               // current scroll offset (px)
