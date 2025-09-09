@@ -1,4 +1,24 @@
 document.addEventListener('DOMContentLoaded', function () {
+
+  // ===== Carousel: seamless infinite loop (all viewports) =====
+  const track = document.querySelector('.carousel__track');
+  if (track && !track.dataset.looped) {
+    // duplicate one full set of slides so the end meets the start
+    track.insertAdjacentHTML('beforeend', track.innerHTML);
+    track.dataset.looped = '1';
+
+    const setLoopDistance = () => {
+      // move by exactly one set (half of doubled content)
+      const distance = track.scrollWidth / 2;
+      track.style.setProperty('--loop-distance', distance + 'px');
+    };
+
+    // compute now, after load, and on resize
+    setLoopDistance();
+    window.addEventListener('load', setLoopDistance);
+    window.addEventListener('resize', setLoopDistance);
+  }
+
   // Smooth scrolling
   document.querySelectorAll('.navbar a').forEach(a => {
     a.addEventListener('click', function (e) {
