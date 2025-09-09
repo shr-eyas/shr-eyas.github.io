@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
   if (track && !track.dataset.looped) {
     track.dataset.looped = '1';
 
-    const DURATION_MS = 20000;   // time to scroll one full set
+    const DURATION_MS = 50000;   // time to scroll one full set
     const MAX_DT = 20;           // cap per-frame delta (ms)
     let last = performance.now();
     let offset = 0;              // px translated to the left
