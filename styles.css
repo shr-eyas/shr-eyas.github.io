@@ -707,3 +707,7 @@ footer {
   .demo-info p  { font-size: 0.95rem; }
 }
 
+/* Mobile: hide navbar entirely */
+@media screen and (max-width: 768px) {
+  .navbar { display: none !important; }
+}
