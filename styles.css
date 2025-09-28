@@ -3,6 +3,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap');
 
 
+:root{
+  --sidebar-left: 100px;  /* matches .left-sidebar { left:100px } */
+  --sidebar-w:    170px;  /* matches .left-sidebar { width:170px } */
+  --gutter:       40px;   /* space between sidebar and content */
+}
+
 .section-divider {
     border-top: 2px solid #352aff4f;
     margin-top: 1;
@@ -346,12 +352,20 @@ footer {
     padding-left: 3rem
 }
 
-.navbar {
-    position: absolute;
-    left: 340px;
-    top: 75px; /* Adjust this value to line up with your header */
-    left: 8.5cm;
+@media (min-width: 1024px){
+  .navbar{
+    position: fixed;
+    top: 75px;
+    left: calc(var(--sidebar-left) + var(--sidebar-w) + var(--gutter));
+    right: 2rem;
+    display: flex;
+    gap: 20px;
+  }
+  .main-content{
+    padding-left: calc(var(--sidebar-left) + var(--sidebar-w) + var(--gutter));
+  }
 }
+
 
 .navbar a {
     position: relative;
