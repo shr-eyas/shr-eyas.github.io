@@ -9,6 +9,11 @@
   --gutter:       40px;   /* space between sidebar and content */
 }
 
+header{
+  position: relative;   /* gives .navbar a positioning context */
+  min-height: 120px;    /* space so it doesn't overlap the H2 */
+}
+
 .section-divider {
     border-top: 2px solid #352aff4f;
     margin-top: 1;
@@ -354,10 +359,9 @@ footer {
 
 @media (min-width: 1024px){
   .navbar{
-    position: fixed;
+    position: absolute;
     top: 75px;
     left: calc(var(--sidebar-left) + var(--sidebar-w) + var(--gutter));
-    right: 2rem;
     display: flex;
     gap: 20px;
   }
@@ -365,7 +369,6 @@ footer {
     padding-left: calc(var(--sidebar-left) + var(--sidebar-w) + var(--gutter));
   }
 }
-
 
 .navbar a {
     position: relative;
