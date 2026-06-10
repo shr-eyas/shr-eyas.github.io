@@ -56,7 +56,7 @@ Time: current
 Place: DexSent Robotics
 Current: true
 
-Researching robotics, control, and learning under the guidance of Prof. Ravi Prakash.
+Building DexSent!
 
 ### predoctoral fellow
 
