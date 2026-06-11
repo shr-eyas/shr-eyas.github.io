@@ -355,6 +355,10 @@ document.addEventListener('DOMContentLoaded', async function () {
       },
       content_order: contentOrder,
       footer: {
+        contact_title: footerFields.contact_title || 'contact',
+        email_label: footerFields.email_label || 'email',
+        email: footerFields.email || profile.email || '',
+        institution: footerFields.institution || profile.institution || '',
         adapted_from: adapted,
         last_updated: footerFields.last_updated || ''
       }
@@ -667,19 +671,46 @@ document.addEventListener('DOMContentLoaded', async function () {
     });
 
     if (site.footer) {
+      const contactTitle = document.getElementById('footer-contact-title');
+      if (contactTitle && site.footer.contact_title) {
+        contactTitle.textContent = site.footer.contact_title;
+      }
+
+      const emailLabel = document.getElementById('footer-email-label');
+      if (emailLabel && site.footer.email_label) {
+        emailLabel.textContent = `${site.footer.email_label}:`;
+      }
+
+      const email = document.getElementById('email-scramble');
+      if (email && site.footer.email) email.dataset.email = site.footer.email;
+
+      const institution = document.getElementById('footer-institution');
+      if (institution && site.footer.institution) {
+        institution.textContent = '';
+        const icon = document.createElement('i');
+        icon.className = 'fas fa-university';
+        icon.setAttribute('aria-hidden', 'true');
+        institution.append(icon, ` ${site.footer.institution}`);
+      }
+
       const credit = document.getElementById('footer-credit');
-      if (credit && site.footer.adapted_from) {
-        credit.textContent = 'Website adapted from ';
+      if (credit) {
+        credit.textContent = '';
 
-        const a = document.createElement('a');
-        a.href = site.footer.adapted_from.url;
-        a.textContent = site.footer.adapted_from.label;
-        externalAttrs(a, a.href);
+        if (site.footer.adapted_from) {
+          credit.append('Website adapted from ');
 
-        credit.append(a, '.');
+          const a = document.createElement('a');
+          a.href = site.footer.adapted_from.url;
+          a.textContent = site.footer.adapted_from.label;
+          externalAttrs(a, a.href);
+
+          credit.append(a, '.');
+        }
 
         if (site.footer.last_updated) {
-          credit.append(document.createElement('br'), ` Last updated on ${site.footer.last_updated}.`);
+          if (credit.childNodes.length) credit.append(document.createElement('br'));
+          credit.append(`Last updated on ${site.footer.last_updated}.`);
         }
       }
     }

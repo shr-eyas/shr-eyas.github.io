@@ -172,5 +172,8 @@ Some resources regarding academia and research that I have found helpful:
 
 ## footer
 
-Adapted from: [Iñigo Parra](https://iparramartin.github.io/)
-Last updated: September 18, 2025
+Contact title: contact
+Email label: email
+Email: shreyaskumar@iisc.ac.in
+Institution: Cyber-Physical Systems, Indian Institute of Science
+Last updated: June 10, 2025
