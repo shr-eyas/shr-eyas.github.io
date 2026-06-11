@@ -35,7 +35,7 @@ This README is the source of truth for the website. Edit the Markdown below, the
 
 | label | url | icon |
 | --- | --- | --- |
-| Twitter | https://www.twitter.com/shr-eyas | fab fa-twitter |
+| Twitter | https://www.twitter.com/shreyascs | fab fa-twitter |
 | GitHub | https://www.github.com/shr-eyas | fab fa-github |
 | LinkedIn | https://www.linkedin.com/in/shr-eyas/ | fab fa-linkedin-in |
 | Medium | https://medium.com/@shr-eyas | fab fa-medium-m |
@@ -44,9 +44,13 @@ This README is the source of truth for the website. Edit the Markdown below, the
 
 ## about me
 
-I am a predoctoral fellow at the [Robert Bosch Centre for Cyber-Physical Systems (RBCCPS)](https://cps.iisc.ac.in/), IISc Bangalore, where I am advised by [Prof. Ravi Prakash](https://ravipr009.github.io/). My research lies at the intersection of robotics, control, and learning. I have been fortunate to collaborate with researchers worldwide, including [Prof. Jihong Zhu](https://www.csc.liv.ac.uk/~anguyen/), [Prof. Anh Nguyen](https://jihong-zhu.github.io/), [Prof. Fares Abu-Dakka](https://sites.google.com/view/abudakka/), and [Prof. Dibakar Datta](https://dibakardatta.net/).
+I’m currently a Founding Engineer at DexSent, where I work on robotics for industrial applications, from fundamental control and manipulation algorithms to state-of-the-art AI models for planning and vision.
 
-Previously, I was a staff researcher at [IITGN Robotics Laboratory](https://research.iitgn.ac.in/robotics/), where I worked under the guidance of [Prof. Harish P.M.](https://iitgn.ac.in/faculty/me/6-harish), and was supported by [Addverb Technologies](https://addverb.com/). I hold an undergraduate degree in Mechanical Engineering from the Indian Institute of Engineering Science and Technology (IIEST).
+Before this, I was a predoctoral fellow at [RBCCPS, IISc Bangalore](https://cps.iisc.ac.in/), advised by [Prof. Ravi Prakash](https://ravipr009.github.io/). My research sits at the intersection of robotics, control, and learning, with a focus on building systems that can interact with the physical world reliably.
+
+I’ve also had the joy of collaborating with researchers across the world, including [Prof. Jihong Zhu](https://www.csc.liv.ac.uk/~anguyen/), [Prof. Anh Nguyen](https://jihong-zhu.github.io/), [Prof. Fares Abu-Dakka](https://sites.google.com/view/abudakka/), and [Prof. Dibakar Datta](https://dibakardatta.net/).
+
+During my eighth semester, I was an exchange student at [IITGN Robotics Laboratory](https://research.iitgn.ac.in/robotics/), where I worked with [Prof. Harish P.M.](https://iitgn.ac.in/faculty/me/6-harish), supported by [Addverb Technologies](https://addverb.com/). I hold an undergraduate degree in Mechanical Engineering from IIEST, where my love for robotics, control, and building things first took shape.
 
 ## experience
 
