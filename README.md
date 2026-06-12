@@ -44,7 +44,7 @@ This README is the source of truth for the website. Edit the Markdown below, the
 
 ## about me
 
-I’m currently a Founding Engineer at DexSent, where I work on robotics for industrial applications, from fundamental control and manipulation algorithms to state-of-the-art AI models for planning and vision.
+I’m currently a Founding R&D Engineer at DexSent, where I work on robotics for industrial applications, from fundamental control and manipulation algorithms to state-of-the-art AI models for planning and vision.
 
 Before this, I was a predoctoral fellow at [RBCCPS, IISc Bangalore](https://cps.iisc.ac.in/), advised by [Prof. Ravi Prakash](https://ravipr009.github.io/). My research sits at the intersection of robotics, control, and learning, with a focus on building systems that can interact with the physical world reliably.
 
@@ -54,7 +54,7 @@ During my eighth semester, I was an exchange student at [IITGN Robotics Laborato
 
 ## experience
 
-### founding engineer 
+### founding engineer (r&d) 
 
 Time: current
 Place: DexSent Robotics
@@ -171,6 +171,7 @@ Outside of robotics, I'm deeply interested in nature, music, and philosophy. I e
 
 Some resources regarding academia and research that I have found helpful:
 
+- The [Map of Robot Learning](https://x.com/quarqlabs/article/2064405734981505465).
 - A [guide](https://talkingtorobots.com/FAQ.html) for when-to and when not-to write an outreach email?
 - Andrej Karpathy's survival [guide](https://karpathy.github.io/2016/09/07/phd/) for PhD students.
 
