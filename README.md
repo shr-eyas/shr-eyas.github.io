@@ -93,22 +93,29 @@ My vision is to build generalizable robotic systems capable of physically intera
 
 ## publications
 
+### Gripper-Aware Vision Language Action Models
+
+Authors: Hanyi Zhang, Zihong Luo, Tianyu Li, Khang Nguyen, Basu Hela, Shreyas Kumar, Ngoc Duy Tran, Feng Dai, Charith Munasinghe, Jorge Peña Queralta, Giovanni Toffetti, Khoa Vo, Ngan Le, Ravi Prakash, Quan Vuong, Tung D. Ta, Long Hu, Anh Nguyen, Baoru Huang
+Venue: European Conference on Computer Vision (ECCV) 2026
+Links: [Paper](https://doi.org/10.1007/978-3-032-36846-1_25), [arXiv](https://arxiv.org/abs/2608.24603)
+
+### Safe and Optimal Variable Impedance Control via Certified Reinforcement Learning
+
+Authors: Shreyas Kumar, Ravi Prakash
+Venue: IEEE International Conference on Robotics and Automation (ICRA) 2026
+Links: [Paper](https://doi.org/10.1109/ICRA57385.2026.11695701), [arXiv](https://arxiv.org/abs/2511.16330)
+
+### Velocity-Based Admittance-Impedance Control with Contact Compliance Modeling for Robust Dual-Arm Manipulation
+
+Authors: Samriddhi Dubey, Yash Kashiv, Shreyas Kumar, Siddhi Jain, Rajesh Kumar, Harish J. Palanthandalam-Madapusi
+Venue: IEEE International Conference on Robotics and Automation (ICRA) 2026
+Links: [Paper](https://doi.org/10.1109/ICRA57385.2026.11697470)
+
 ### Closed Form HJB Solution for Continuous-Time Optimal Control of a Non-Linear Input-Affine System
 
 Authors: Akash Vyas, Shreyas Kumar, Jayant Kumar Mohanta, Ravi Prakash
 Venue: Under Review in 8th Annual Learning for Dynamics and Control Conference (L4DC) 2026
 Links: [arXiv](https://arxiv.org/abs/2511.21593)
-
-### Safe and Optimal Variable Impedance Control via Certified Reinforcement Learning
-
-Authors: Shreyas Kumar, Ravi Prakash
-Venue: Under Review in IEEE International Conference on Robotics and Automation (ICRA) 2026
-Links: [arXiv](https://arxiv.org/abs/2511.16330)
-
-### Velocity-Based Admittance-Impedance Control with Contact Compliance Modeling for Robust Dual-Arm Manipulation
-
-Authors: Samriddhi Dubey, Yash Kashiv, Shreyas Kumar, Rajesh Kumar, Harish J. Palanthandalam-Madapusi
-Venue: Under Review in IEEE International Conference on Robotics and Automation (ICRA) 2026
 
 ### PACER: Progress-Aligned Curation for Error-Resilient Imitation Learning
 

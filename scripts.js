@@ -404,7 +404,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         item.links.forEach(link => {
           const a = document.createElement('a');
           a.href = link.url;
-          a.textContent = `${link.label || 'link'} `;
+          a.textContent = link.label || 'link';
           externalAttrs(a, link.url);
 
           const icon = document.createElement('i');
