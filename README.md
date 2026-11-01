@@ -8,7 +8,7 @@ This README is the source of truth for the website. Edit the Markdown below, the
 | --- | --- |
 | name | Shreyas Kumar |
 | image | data/profile_pic/profile-web.jpg |
-| email | shreyaskumar@iisc.ac.in |
+| email | shreyas.kumar@icloud.com |
 | institution | Cyber-Physical Systems, Indian Institute of Science |
 
 ## theme
@@ -40,7 +40,7 @@ This README is the source of truth for the website. Edit the Markdown below, the
 | LinkedIn | https://www.linkedin.com/in/shr-eyas/ | fab fa-linkedin-in |
 | Medium | https://medium.com/@shr-eyas | fab fa-medium-m |
 | Reddit | https://www.reddit.com/user/shr-eyas | fab fa-reddit-alien |
-| Email | mailto:shreyaskumar@iisc.ac.in | fas fa-envelope |
+| Email | mailto:shreyas.kumar@icloud.com | fas fa-envelope |
 
 ## about me
 
@@ -186,6 +186,6 @@ Some resources regarding academia and research that I have found helpful:
 
 Contact title: contact
 Email label: email
-Email: shreyaskumar@iisc.ac.in
+Email: shreyas.kumar@icloud.com
 Institution: Cyber-Physical Systems, Indian Institute of Science
-Last updated: June 10, 2025
+Last updated: November 1, 2026
